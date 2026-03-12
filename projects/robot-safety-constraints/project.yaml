@@ -1,0 +1,14 @@
+id: robot-safety-constraints
+name: Runtime Safety Constraint Verification for Autonomous Robots
+name_en: Runtime Safety Constraint Verification for Autonomous Robots
+definition: Develop runtime monitors that verify safety constraints for autonomous robot policies, with formal guarantees on constraint satisfaction rates.
+pillar: 'D12: Robotics & Embodied AI'
+priority: P2
+tags:
+- robotics
+- safety
+- runtime-verification
+- constraints
+rag: green
+last_activity: '2026-03-06T07:27:21.552611'
+created_at: '2025-01-15T00:00:00'

@@ -1,0 +1,722 @@
+steps:
+- id: VC-01
+  title: Repository scaffold & CI pipeline
+  description: Create monorepo structure, dependency management, pre-commit hooks,
+    GitHub Actions CI.
+  acceptance: pytest passes; ruff lint clean; pre-commit hooks run; GitHub Actions
+    green on push
+  section: Phase 0 — Setup & Repo
+  phase: 0
+  status: done
+  linked_milestone: M1
+  designspec_refs:
+  - repo-scaffold
+  - ci-pipeline
+  deliverables:
+  - pyproject.toml with all dependencies pinned
+  - 'Makefile with targets: lint, test, format, build'
+  - .github/workflows/ci.yml running pytest + ruff + mypy
+  - pre-commit config (ruff, black, mypy, trailing-whitespace)
+  - README.md with quickstart and badge links
+  prompt_hint: Scaffold a Python monorepo with src layout, pytest, ruff, mypy, GitHub
+    Actions CI, and Makefile.
+  prompt_expanded: '## Context
+
+    You are building the repository scaffold for a benchmark harness that evaluates
+
+    tool-using LLM agents under budget/latency/noise constraints. The repo will be
+
+    pip-installable and published to PyPI.
+
+
+    ## Inputs
+
+    - Project name: `agent-budget-bench`
+
+    - Python version: 3.11+
+
+    - Key dependencies: pydantic>=2.0, click, orjson, opentelemetry-api, pytest, ruff
+
+
+    ## Plan
+
+    - [ ] Create `src/agent_budget_bench/` with `__init__.py`, `__main__.py`
+
+    - [ ] Create `pyproject.toml` with [project] metadata, [tool.ruff], [tool.pytest]
+
+    - [ ] Create `Makefile` with targets: lint, test, format, build, clean
+
+    - [ ] Create `.github/workflows/ci.yml`: checkout → setup-python → pip install
+    -e .[dev] → make lint → make test
+
+    - [ ] Create `.pre-commit-config.yaml` with ruff, black, mypy hooks
+
+    - [ ] Create `README.md` with project overview, quickstart, CI badge
+
+
+    ## Implementation Guidance
+
+    Use src-layout (`src/agent_budget_bench/`). Pin major versions in pyproject.toml.
+
+    Makefile should use `python -m pytest -x -q` for test target.
+
+    CI should run on push to main and on PRs. Cache pip dependencies.
+
+
+    ## Verification
+
+    ```bash
+
+    pip install -e ".[dev]"
+
+    make lint   # must exit 0
+
+    make test   # must exit 0
+
+    pre-commit run --all-files  # must exit 0
+
+    ```
+
+
+    ## Report Format
+
+    After completing this step, confirm:
+
+    - [ ] `pip install -e .` succeeds
+
+    - [ ] `make lint` passes with 0 warnings
+
+    - [ ] `make test` passes (even if 0 tests yet)
+
+    - [ ] GitHub Actions CI template is syntactically valid
+
+    '
+- id: VC-02
+  title: JSONL trace schema & TaskInstance model
+  description: Define the OpenTelemetry-compatible JSONL trace format and Pydantic
+    TaskInstance model.
+  acceptance: Pydantic models validate; sample trace roundtrips through orjson; schema
+    docs generated
+  section: Phase 1 — Data & Trace Schema
+  phase: 1
+  status: done
+  linked_milestone: M2
+  designspec_refs:
+  - trace-schema
+  - task-model
+  deliverables:
+  - src/agent_budget_bench/schemas/trace.py with TraceSpan, ToolCall, LLMCall, AgentTrace
+    models
+  - src/agent_budget_bench/schemas/task.py with TaskInstance, TaskFamily, GroundTruth
+    models
+  - tests/test_schemas.py with roundtrip serialization tests
+  - docs/trace_schema.md with field descriptions and examples
+  - sample_data/trace_example.jsonl with 3 annotated spans
+  prompt_hint: Define Pydantic V2 models for JSONL traces and task instances with
+    OpenTelemetry span fields.
+  prompt_expanded: "## Context\nThe benchmark records every tool call and LLM call\
+    \ in a JSONL trace file.\nEach line is a TraceSpan with OpenTelemetry-compatible\
+    \ fields. We need strict\nPydantic V2 models so traces can be validated, queried,\
+    \ and replayed.\n\n## Inputs\n- TraceSpan fields: span_id (uuid), parent_span_id\
+    \ (optional), trace_id (uuid),\n  kind (tool_call | llm_call | agent_step), name,\
+    \ start_time_ms, end_time_ms,\n  input_hash (sha256 of input), output_hash, status\
+    \ (ok | error | timeout | budget_exceeded),\n  attributes (dict[str, Any])\n-\
+    \ ToolCall subfields: tool_name, tool_args, tool_result (truncated to 2000 chars),\n\
+    \  latency_injected_ms, noise_applied (none | truncation | stale | format_error)\n\
+    - TaskInstance fields: task_id, family (enum of 6), split (dev | test),\n  prompt,\
+    \ ground_truth, metadata (dict)\n\n## Plan\n- [ ] Create `schemas/trace.py` with\
+    \ TraceSpan, ToolCallAttributes, LLMCallAttributes\n- [ ] Create `schemas/task.py`\
+    \ with TaskFamily enum, TaskInstance, GroundTruth\n- [ ] Create `schemas/agent_trace.py`\
+    \ with AgentTrace (list of spans + final_answer + metrics)\n- [ ] Write `tests/test_schemas.py`\
+    \ with:\n  - Roundtrip: create → serialize → deserialize → compare\n  - Validation:\
+    \ reject missing required fields\n  - Edge cases: empty attributes, max-length\
+    \ truncation\n- [ ] Write `docs/trace_schema.md` with table of all fields\n\n\
+    ## Verification\n```bash\nmake test -k test_schemas\npython -c \"from agent_budget_bench.schemas.trace\
+    \ import TraceSpan; print('OK')\"\n```\n"
+- id: VC-03
+  title: TaskLoader for 6 task families
+  description: Implement TaskLoader that reads task instances from JSONL files for
+    all 6 families.
+  acceptance: TaskLoader loads dev/test splits for all 6 families; fixture tests pass;
+    830 total instances
+  section: Phase 1 — Data & Trace Schema
+  phase: 1
+  status: done
+  linked_milestone: M2
+  designspec_refs:
+  - task-loader
+  - task-families
+  deliverables:
+  - src/agent_budget_bench/data/task_loader.py
+  - src/agent_budget_bench/data/generators/ with 6 family-specific generators
+  - data/tasks/{retrieval,codegen,data_analysis,multihop_qa,planning,web_nav}/{dev,test}.jsonl
+  - tests/test_task_loader.py
+  - 'Script: scripts/generate_tasks.py to regenerate task instances'
+  prompt_hint: Build a TaskLoader class with family-specific JSONL readers and a task
+    generation script for 830 instances across 6 families.
+  prompt_expanded: "## Context\nThe benchmark needs 830 task instances across 6 families.\
+    \ Each family has its own\nstructure but all conform to the TaskInstance Pydantic\
+    \ model from VC-02.\n\n## Task Family Specifications\n| Family | Count | Tools\
+    \ Required | Ground Truth Type |\n|--------|-------|---------------|-------------------|\n\
+    | TF-Retrieval | 200 | search, read_document | list[passage_id] |\n| TF-CodeGen\
+    \ | 150 | code_executor, lint, test_runner | pass/fail on hidden tests |\n| TF-DataAnalysis\
+    \ | 120 | pandas_query, plot_generator, calculator | numeric or categorical answer\
+    \ |\n| TF-MultiHopQA | 180 | search, read_page, extract_entity | exact string\
+    \ answer |\n| TF-Planning | 100 | calendar, resource_checker, dependency_solver\
+    \ | valid plan (constraint satisfaction) |\n| TF-WebNav | 80 | click, type_text,\
+    \ read_page, screenshot | boolean (task completed) |\n\n## Plan\n- [ ] Create\
+    \ TaskLoader class with `load(family, split) -> list[TaskInstance]`\n- [ ] Create\
+    \ generator scripts per family (can use templates + random seeds)\n- [ ] Generate\
+    \ dev (20%) and test (80%) splits with seed=42\n- [ ] Validate all instances against\
+    \ TaskInstance schema\n- [ ] Write integration test loading every family/split\
+    \ combination\n\n## Verification\n```bash\npython scripts/generate_tasks.py --seed\
+    \ 42\nmake test -k test_task_loader\npython -c \"\nfrom agent_budget_bench.data.task_loader\
+    \ import TaskLoader\ntl = TaskLoader('data/tasks')\nfor fam in ['retrieval','codegen','data_analysis','multihop_qa','planning','web_nav']:\n\
+    \    dev = tl.load(fam, 'dev')\n    test = tl.load(fam, 'test')\n    print(f'{fam}:\
+    \ dev={len(dev)}, test={len(test)}')\n\"\n```\n"
+- id: VC-04
+  title: BudgetController with 3-axis constraints
+  description: Implement BudgetController enforcing tool-call budget, latency injection,
+    and noise injection.
+  acceptance: Unit tests for each axis; combined stress config works; budget exhaustion
+    raises BudgetExceeded
+  section: Phase 2 — Harness Core
+  phase: 2
+  status: done
+  linked_milestone: M3
+  designspec_refs:
+  - budget-controller
+  - stress-axes
+  deliverables:
+  - src/agent_budget_bench/harness/budget_controller.py
+  - src/agent_budget_bench/harness/noise_injector.py
+  - src/agent_budget_bench/harness/latency_injector.py
+  - 'Config schema: ConstraintConfig(max_calls, latency_ms, noise_type, noise_rate)'
+  - tests/test_budget_controller.py with 12 test cases
+  prompt_hint: Implement BudgetController with call counting, async latency injection,
+    and 4 noise types.
+  prompt_expanded: "## Context\nThe BudgetController sits between the agent and tool\
+    \ simulator. Every tool call\npasses through it. It enforces three constraint\
+    \ axes independently or combined.\n\n## Constraint Axes\n1. **Budget**: max_calls\
+    \ (int). After max_calls, raise BudgetExceeded.\n2. **Latency**: latency_ms (int).\
+    \ asyncio.sleep(latency_ms/1000) before returning.\n3. **Noise**: noise_type ∈\
+    \ {none, truncation, stale, format_error}, noise_rate ∈ [0,1].\n   - truncation:\
+    \ truncate output to `noise_rate * len(output)` characters\n   - stale: replace\
+    \ timestamps in output with `now - stale_offset`\n   - format_error: corrupt JSON\
+    \ keys with probability `noise_rate`\n\n## Plan\n- [ ] Create ConstraintConfig\
+    \ Pydantic model\n- [ ] Implement BudgetController.__call__(tool_name, tool_args,\
+    \ tool_result) -> modified_result\n- [ ] Implement NoiseInjector with 4 strategies\n\
+    - [ ] Implement LatencyInjector (async sleep)\n- [ ] Track call count and emit\
+    \ BudgetExceeded when exceeded\n- [ ] Write tests: budget limit, latency timing,\
+    \ each noise type, combined\n\n## Verification\n```bash\nmake test -k test_budget_controller\n\
+    # Timing test: latency_ms=500 should add ~500ms per call\n# Budget test: max_calls=3,\
+    \ 4th call raises BudgetExceeded\n# Noise test: truncation at 50% halves output\
+    \ length ±5%\n```\n"
+- id: VC-05
+  title: ToolSimulator with 10 simulated tools
+  description: Build deterministic tool simulators for search, code_executor, calculator,
+    browser, etc.
+  acceptance: All 10 tools produce deterministic output for same input; response times
+    < 10ms without latency injection
+  section: Phase 2 — Harness Core
+  phase: 2
+  status: done
+  linked_milestone: M3
+  designspec_refs:
+  - tool-simulator
+  - tool-registry
+  deliverables:
+  - src/agent_budget_bench/tools/simulator.py with ToolSimulator class
+  - src/agent_budget_bench/tools/registry.py with tool registration
+  - '10 tool implementations: search, read_document, code_executor, lint, test_runner,
+    pandas_query, plot_generator, calculator, click, type_text'
+  - data/tools/ with mock data for each tool
+  - tests/test_tools.py with determinism and correctness tests
+  prompt_hint: Create a ToolSimulator registry with 10 deterministic mock tools and
+    corpus data.
+  prompt_expanded: '## Context
+
+    Tool simulators must be deterministic (same input → same output) for reproducibility.
+
+    Each tool has a mock corpus or rule set. The simulator is the ground truth for
+
+    tool behavior; the BudgetController then optionally degrades the output.
+
+
+    ## Tool Specifications
+
+    | Tool | Input | Output | Mock Data |
+
+    |------|-------|--------|-----------|
+
+    | search | query: str, k: int | list[{title, snippet, url}] | 500 mock documents
+    |
+
+    | read_document | url: str | text content (≤ 4000 chars) | 500 mock pages |
+
+    | code_executor | code: str | {stdout, stderr, exit_code} | Python subprocess
+    sandbox |
+
+    | lint | code: str | list[{line, message, severity}] | ruff --output-format json
+    |
+
+    | test_runner | code: str, tests: str | {passed, failed, errors} | pytest capture
+    |
+
+    | pandas_query | query: str, csv_path: str | {result, dtype} | 10 mock CSVs |
+
+    | plot_generator | spec: dict | {png_base64} | matplotlib headless |
+
+    | calculator | expression: str | {result: float} | eval with ast.literal_eval
+    |
+
+    | click | selector: str | {success, new_page_url} | DOM mock |
+
+    | type_text | selector: str, text: str | {success} | DOM mock |
+
+
+    ## Plan
+
+    - [ ] Create ToolRegistry with `register(name, fn)` and `call(name, args) -> result`
+
+    - [ ] Implement each tool as a standalone function
+
+    - [ ] Create mock corpus data in `data/tools/`
+
+    - [ ] Ensure determinism: set random seed, no external calls
+
+    - [ ] Test each tool independently + test registry dispatch
+
+
+    ## Verification
+
+    ```bash
+
+    make test -k test_tools
+
+    python -c "
+
+    from agent_budget_bench.tools.simulator import ToolSimulator
+
+    sim = ToolSimulator(''data/tools'')
+
+    r = sim.call(''search'', {''query'': ''agent benchmark'', ''k'': 3})
+
+    assert len(r) == 3
+
+    print(''Tools OK'')
+
+    "
+
+    ```
+
+    '
+- id: VC-06
+  title: AgentAdapter interface + ReAct adapter
+  description: Define the abstract AgentAdapter interface and implement the first
+    concrete adapter for ReAct.
+  acceptance: ReAct adapter completes TF-Retrieval dev tasks; traces are valid JSONL;
+    adapter is pluggable
+  section: Phase 2 — Harness Core
+  phase: 2
+  status: done
+  linked_milestone: M3
+  designspec_refs:
+  - agent-adapter
+  - react-adapter
+  deliverables:
+  - src/agent_budget_bench/adapters/base.py with abstract AgentAdapter
+  - src/agent_budget_bench/adapters/react_adapter.py
+  - src/agent_budget_bench/adapters/registry.py
+  - tests/test_react_adapter.py with mock LLM backend
+  - docs/adapter_guide.md for writing custom adapters
+  prompt_hint: Define AgentAdapter ABC with run(task, constraints) -> AgentTrace,
+    and implement ReAct adapter.
+  prompt_expanded: "## Context\nEach agent framework needs an adapter that conforms\
+    \ to our interface.\nThe adapter receives a TaskInstance and ConstraintConfig,\
+    \ runs the agent,\nand returns an AgentTrace with all tool/LLM calls logged.\n\
+    \n## Interface\n```python\nclass AgentAdapter(ABC):\n    @abstractmethod\n   \
+    \ async def run(self, task: TaskInstance, constraints: ConstraintConfig,\n   \
+    \               tool_sim: ToolSimulator) -> AgentTrace: ...\n    @property\n \
+    \   @abstractmethod\n    def name(self) -> str: ...\n```\n\n## ReAct Adapter\n\
+    - Parse ReAct thought-action-observation loop\n- Each action → tool_sim.call()\
+    \ → through BudgetController\n- Record each step as TraceSpan\n- Use a mock LLM\
+    \ backend for testing (deterministic responses)\n\n## Plan\n- [ ] Define AgentAdapter\
+    \ ABC in adapters/base.py\n- [ ] Implement ReActAdapter with thought-action-observation\
+    \ loop\n- [ ] Create MockLLMBackend for deterministic testing\n- [ ] Register\
+    \ in AdapterRegistry\n- [ ] Test: run ReAct on 5 TF-Retrieval dev tasks, validate\
+    \ traces\n\n## Verification\n```bash\nmake test -k test_react_adapter\n```\n"
+- id: VC-07
+  title: TraceRecorder with OpenTelemetry JSONL output
+  description: Implement trace recording to JSONL files with span IDs, timestamps,
+    and input/output hashes.
+  acceptance: Traces are valid JSONL; each span has span_id and trace_id; replay produces
+    identical metrics
+  section: Phase 2 — Harness Core
+  phase: 2
+  status: done
+  linked_milestone: M3
+  designspec_refs:
+  - trace-recorder
+  - otel-compat
+  deliverables:
+  - src/agent_budget_bench/harness/trace_recorder.py
+  - src/agent_budget_bench/harness/replay.py for trace replay
+  - tests/test_trace_recorder.py
+  - tests/test_replay.py with deterministic replay verification
+  prompt_hint: Build TraceRecorder writing JSONL with OTel span IDs and a replay utility
+    for deterministic re-evaluation.
+  prompt_expanded: '## Context
+
+    Every benchmark run produces a trace.jsonl file. The TraceRecorder hooks into
+
+    the agent loop and writes one line per span. The replay utility re-reads traces
+
+    and recomputes metrics without re-running agents.
+
+
+    ## Requirements
+
+    - Thread-safe JSONL writer (use file lock or queue)
+
+    - Each span gets a UUID span_id and inherits trace_id from the run
+
+    - Input/output hashes use SHA-256 for audit verification
+
+    - Timestamps in epoch milliseconds (int)
+
+    - Replay reads JSONL → reconstructs AgentTrace → feeds to MetricsEngine
+
+
+    ## Plan
+
+    - [ ] Implement TraceRecorder with context manager (open/close file)
+
+    - [ ] Add `record_span(span: TraceSpan)` method
+
+    - [ ] Add `record_tool_call(...)` and `record_llm_call(...)` convenience methods
+
+    - [ ] Implement replay.py: `load_trace(path) -> AgentTrace`
+
+    - [ ] Test roundtrip: record → replay → compare
+
+
+    ## Verification
+
+    ```bash
+
+    make test -k test_trace
+
+    # Roundtrip test: record 10 spans, replay, assert equality
+
+    ```
+
+    '
+- id: VC-08
+  title: 'Baseline agents: NoTool, RandomTool, GreedyFirst'
+  description: Implement 3 baseline agent adapters for controlled comparison.
+  acceptance: All 3 baselines complete TF-Retrieval dev tasks; traces valid; results
+    reproducible across seeds
+  section: Phase 3 — Baselines
+  phase: 3
+  status: done
+  linked_milestone: M4
+  designspec_refs:
+  - baselines
+  - no-tool
+  - random-tool
+  - greedy-first
+  deliverables:
+  - src/agent_budget_bench/adapters/no_tool.py
+  - src/agent_budget_bench/adapters/random_tool.py
+  - src/agent_budget_bench/adapters/greedy_first.py
+  - tests/test_baselines.py with determinism checks
+  - results/baselines/ with dev-split results for 3 baselines × 6 families
+  prompt_hint: Implement NoTool (LLM-only), RandomTool (random tool selection), GreedyFirst
+    (first-applicable) baseline adapters.
+  prompt_expanded: "## Context\nBaselines establish performance bounds. NoTool is\
+    \ the floor (no tool access),\nRandomTool tests whether structured selection matters,\
+    \ GreedyFirst tests\nwhether diversity within budget matters.\n\n## Specifications\n\
+    - **NoTool**: Passes task prompt directly to LLM, no tool calls. Returns LLM answer.\n\
+    - **RandomTool**: At each step, randomly selects from available tools. Uses tool\
+    \ result\n  in next LLM prompt. Stops at budget limit.\n- **GreedyFirst**: At\
+    \ each step, picks the first applicable tool (alphabetical).\n  Uses result in\
+    \ next prompt. Stops at budget limit.\n\n## Plan\n- [ ] Implement NoToolAdapter\
+    \ (trivial — single LLM call)\n- [ ] Implement RandomToolAdapter (random.choice\
+    \ from tool_registry.available())\n- [ ] Implement GreedyFirstAdapter (sorted(tools)[0])\n\
+    - [ ] Ensure all use seed for reproducibility\n- [ ] Run on TF-Retrieval dev split,\
+    \ save traces\n- [ ] Verify determinism: same seed → same traces\n\n## Verification\n\
+    ```bash\nmake test -k test_baselines\npython -m agent_budget_bench run --adapter\
+    \ no_tool --family retrieval --split dev\npython -m agent_budget_bench run --adapter\
+    \ random_tool --family retrieval --split dev --seed 42\n```\n"
+- id: VC-09
+  title: 'MetricsEngine: accuracy, efficiency, cost, failure modes'
+  description: Implement metrics computation from traces including degradation slope
+    and Pareto frontier.
+  acceptance: Metrics match hand-computed values on 3 sample traces; CSV/JSON output
+    validated; plots render
+  section: Phase 4 — Metrics & Reports
+  phase: 4
+  status: done
+  linked_milestone: M5
+  designspec_refs:
+  - metrics-engine
+  - degradation-curves
+  - pareto
+  deliverables:
+  - src/agent_budget_bench/metrics/engine.py
+  - src/agent_budget_bench/metrics/degradation.py (curve fitting)
+  - src/agent_budget_bench/metrics/pareto.py (frontier computation)
+  - src/agent_budget_bench/metrics/failure_classifier.py
+  - tests/test_metrics.py with hand-computed verification
+  - 'Output schemas: metrics.json, degradation_curves.csv'
+  prompt_hint: Build MetricsEngine computing task accuracy, tool efficiency, cost
+    proxy, failure modes, degradation slope, and Pareto frontier from JSONL traces.
+  prompt_expanded: '## Context
+
+    The MetricsEngine reads AgentTrace objects (from live runs or replayed JSONL)
+
+    and computes all benchmark metrics. It must handle missing data gracefully
+
+    and produce both JSON summaries and CSV tables for downstream plotting.
+
+
+    ## Metrics Specification
+
+    | Metric | Computation | Output |
+
+    |--------|------------|--------|
+
+    | task_accuracy | exact_match or token_f1 per family | float per task, mean ±
+    CI per family |
+
+    | tool_efficiency | count(tool_calls) / count(tasks) | float, stratified by success/fail
+    |
+
+    | cost_proxy | sum(llm_tokens × price + tool_calls × api_price) | float USD per
+    task |
+
+    | latency_throughput | tasks_completed / wall_clock_minutes | float |
+
+    | failure_mode | classify each failure into 6 categories | distribution dict |
+
+    | degradation_slope | linear_fit(accuracy vs budget) | float (slope), float (r²)
+    |
+
+    | pareto_frontier | non-dominated points in (cost, accuracy) space | list[(cost,
+    accuracy)] |
+
+
+    ## Plan
+
+    - [ ] Implement MetricsEngine.compute(traces, ground_truths) -> MetricsResult
+
+    - [ ] Implement degradation curve fitting (numpy polyfit degree 1)
+
+    - [ ] Implement Pareto frontier extraction (sweep from left)
+
+    - [ ] Implement failure classifier (rule-based on trace status codes)
+
+    - [ ] Test against 3 hand-computed sample traces
+
+    - [ ] Output: metrics.json + degradation_curves.csv + pareto_points.csv
+
+
+    ## Verification
+
+    ```bash
+
+    make test -k test_metrics
+
+    python -m agent_budget_bench metrics --traces results/baselines/no_tool/retrieval/
+
+    ```
+
+    '
+- id: VC-10
+  title: 'ReportGenerator: LaTeX tables, plots, executive summary'
+  description: Generate publication-quality LaTeX tables, matplotlib degradation plots,
+    and a one-page summary.
+  acceptance: LaTeX compiles; plots are 300 DPI PNG; summary PDF renders correctly;
+    all figures match data
+  section: Phase 4 — Metrics & Reports
+  phase: 4
+  status: done
+  linked_milestone: M5
+  designspec_refs:
+  - report-generator
+  - latex-tables
+  - degradation-plots
+  deliverables:
+  - src/agent_budget_bench/reports/generator.py
+  - src/agent_budget_bench/reports/templates/ (LaTeX Jinja2 templates)
+  - src/agent_budget_bench/reports/plots.py (matplotlib)
+  - tests/test_reports.py
+  - 'Output: report/{tables.tex, figures/*.png, summary.tex, summary.pdf}'
+  prompt_hint: Build ReportGenerator using Jinja2 LaTeX templates and matplotlib for
+    degradation curve plots and Pareto frontiers.
+  prompt_expanded: "## Context\nThe final output of a benchmark run is a report directory\
+    \ containing\npublication-ready LaTeX tables, figures, and a one-page executive\
+    \ summary.\n\n## Required Outputs\n1. **tables.tex**: One table per metric (accuracy,\
+    \ efficiency, cost) with\n   rows = agents, columns = task families. Include ±\
+    \ CI.\n2. **degradation_budget.png**: X = max_calls, Y = accuracy, one line per\
+    \ agent.\n3. **degradation_latency.png**: X = latency_ms, Y = throughput.\n4.\
+    \ **pareto_frontier.png**: X = cost, Y = accuracy, with frontier highlighted.\n\
+    5. **failure_modes.png**: Stacked bar chart of failure types per agent.\n6. **summary.tex**:\
+    \ One-page executive summary with key findings.\n\n## Plan\n- [ ] Create Jinja2\
+    \ LaTeX templates for tables\n- [ ] Implement plot functions using matplotlib\
+    \ (300 DPI, consistent style)\n- [ ] Implement ReportGenerator.generate(metrics_result,\
+    \ output_dir)\n- [ ] Test: generate from sample metrics, verify files exist and\
+    \ are non-empty\n\n## Verification\n```bash\nmake test -k test_reports\npython\
+    \ -m agent_budget_bench report --metrics results/metrics.json --output report/\n\
+    ls report/  # should contain tables.tex, figures/, summary.tex\n```\n"
+- id: VC-11
+  title: 'Stress test runner: full factorial grid'
+  description: Implement the combined stress test runner executing the 27-cell factorial
+    grid.
+  acceptance: Grid completes for 1 agent × 1 family in < 10 min; results CSV has 81
+    rows (27 cells × 3 seeds)
+  section: Phase 5 — Stress Tests & Packaging
+  phase: 5
+  status: done
+  linked_milestone: M6
+  designspec_refs:
+  - stress-runner
+  - factorial-grid
+  deliverables:
+  - src/agent_budget_bench/harness/stress_runner.py
+  - src/agent_budget_bench/harness/grid_config.py (factorial generation)
+  - tests/test_stress_runner.py
+  - results/stress/ directory with grid results
+  - scripts/run_stress_grid.sh with parallelization (8 workers)
+  prompt_hint: Build stress test runner with budget×latency×noise factorial grid,
+    3 seeds per cell, parallel execution.
+  prompt_expanded: '## Context
+
+    The full factorial stress test combines 3 budget levels × 3 latency levels × 3
+    noise levels
+
+    = 27 cells, each run with 3 random seeds = 81 runs per agent per task family.
+
+
+    ## Grid Definition
+
+    | Axis | Values |
+
+    |------|--------|
+
+    | budget (max_calls) | 5, 15, 50 |
+
+    | latency_ms | 0, 500, 5000 |
+
+    | noise | none, truncate-25%, format-15% |
+
+    | seeds | 42, 43, 44 |
+
+
+    ## Plan
+
+    - [ ] Create GridConfig.generate() -> list[ConstraintConfig × seed]
+
+    - [ ] Implement StressRunner.run_grid(agent, family, grid) -> results_df
+
+    - [ ] Parallelize with ProcessPoolExecutor(max_workers=8)
+
+    - [ ] Save per-cell results to CSV with columns: agent, family, budget, latency,
+    noise, seed, accuracy, cost, ...
+
+    - [ ] Create shell script for batch execution
+
+
+    ## Verification
+
+    ```bash
+
+    make test -k test_stress_runner
+
+    python -m agent_budget_bench stress --adapter no_tool --family retrieval --split
+    dev --workers 4
+
+    wc -l results/stress/no_tool_retrieval.csv  # should be 82 (header + 81 rows)
+
+    ```
+
+    '
+- id: VC-12
+  title: CLI interface & PyPI packaging
+  description: Build click-based CLI for all operations and prepare PyPI package.
+  acceptance: CLI --help works for all subcommands; pip install from wheel works;
+    twine check passes
+  section: Phase 5 — Stress Tests & Packaging
+  phase: 5
+  status: done
+  linked_milestone: M7
+  designspec_refs:
+  - cli
+  - packaging
+  deliverables:
+  - 'src/agent_budget_bench/cli.py with click groups: run, metrics, report, stress'
+  - Updated pyproject.toml with [project.scripts] entry point
+  - tests/test_cli.py with smoke tests for each subcommand
+  - MANIFEST.in and build config for sdist/wheel
+  - scripts/publish.sh for PyPI upload
+  prompt_hint: 'Create a click CLI with subcommands: run, metrics, report, stress.
+    Configure PyPI packaging with entry points.'
+  prompt_expanded: '## Context
+
+    Users interact with the benchmark via CLI: `agent-budget-bench run ...`,
+
+    `agent-budget-bench stress ...`, etc.
+
+
+    ## CLI Subcommands
+
+    | Command | Arguments | Description |
+
+    |---------|-----------|-------------|
+
+    | run | --adapter, --family, --split, --budget, --latency, --noise, --seed, --output
+    | Run single benchmark |
+
+    | metrics | --traces, --output | Compute metrics from traces |
+
+    | report | --metrics, --output | Generate report from metrics |
+
+    | stress | --adapter, --family, --split, --workers, --output | Run full stress
+    grid |
+
+    | list-adapters | | Show registered adapters |
+
+    | list-families | | Show available task families |
+
+
+    ## Plan
+
+    - [ ] Create click group with 6 subcommands
+
+    - [ ] Wire to existing modules (runner, MetricsEngine, ReportGenerator, StressRunner)
+
+    - [ ] Add --verbose flag for debug logging
+
+    - [ ] Configure entry point in pyproject.toml
+
+    - [ ] Build wheel and test installation
+
+    - [ ] Run twine check on built distribution
+
+
+    ## Verification
+
+    ```bash
+
+    agent-budget-bench --help
+
+    agent-budget-bench run --help
+
+    agent-budget-bench list-adapters
+
+    pip wheel . -w dist/ && twine check dist/*.whl
+
+    ```
+
+    '

@@ -1,0 +1,15 @@
+id: sys-inference-optimization
+name: 'LLM Inference Optimization: Quantization vs Distillation vs Pruning'
+name_en: 'LLM Inference Optimization: Quantization vs Distillation vs Pruning'
+definition: Systematic comparison of model compression techniques for LLM inference optimization, measuring latency, throughput, and quality trade-offs.
+pillar: 'D14: Systems & Tooling'
+priority: P0
+tags:
+- systems
+- inference
+- quantization
+- distillation
+- pruning
+rag: green
+last_activity: '2026-03-06T07:27:21.729391'
+created_at: '2025-01-15T00:00:00'

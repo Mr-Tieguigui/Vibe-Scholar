@@ -1,0 +1,14 @@
+id: mm-audio-visual-sync
+name: Audio-Visual Synchronization in Multimodal Generation
+name_en: Audio-Visual Synchronization in Multimodal Generation
+definition: Develop metrics and benchmarks for temporal alignment between generated audio and video streams in multimodal models.
+pillar: 'D10: Multimodal Learning'
+priority: P1
+tags:
+- multimodal
+- audio-visual
+- synchronization
+- generation
+rag: green
+last_activity: '2026-03-06T07:27:21.218344'
+created_at: '2025-01-15T00:00:00'

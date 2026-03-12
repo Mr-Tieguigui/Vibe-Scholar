@@ -1,0 +1,48 @@
+{
+  "title": "Getting Started with VibeScholar",
+  "sections": [
+    {
+      "heading": "Welcome",
+      "type": "definition",
+      "content": "VibeScholar is an opinionated research-operations platform that helps you plan, execute, and track AI/ML research projects from idea to publication. This project is your interactive tutorial."
+    },
+    {
+      "heading": "What is VibeScholar?",
+      "type": "text",
+      "content": "VibeScholar organizes every research project into five pillars:\n\n1. **Overview** — Structured project definition with motivation, scope, questions, and risks\n2. **Execution** — Phased Vibe Coding (VC) and Vibe Research (VR) steps with AI prompts and acceptance criteria\n3. **Timeline** — Milestone-based tracking with Kanban view and deadline management\n4. **Artifacts** — Registry of code, datasets, figures, tables, and reports linked to milestones\n5. **Literature** — Imported papers with tags, summaries, and normalized metadata"
+    },
+    {
+      "heading": "Quick Tour",
+      "type": "pipeline",
+      "steps": [
+        {"step": 1, "label": "Explore the Dashboard", "description": "Open the project list to see all demo projects across 16 research domains. Click any card to see its overview and progress."},
+        {"step": 2, "label": "Open the Gold Standard", "description": "Navigate to 'Tool-Budget Robustness Benchmark' — the most detailed demo with 12 VC steps, 10 VR steps, 20 artifacts, and 12 references."},
+        {"step": 3, "label": "Try the Execution Panel", "description": "Expand a VC or VR step to see its prompt_hint, prompt_expanded, deliverables, and acceptance criteria."},
+        {"step": 4, "label": "Check the Timeline", "description": "Open the milestone panel to see deadline-driven tracking. Drag milestones between Kanban columns."},
+        {"step": 5, "label": "Browse Literature", "description": "View imported papers with tags. Filter by tag, search by title, or import new papers via CSV."}
+      ]
+    },
+    {
+      "heading": "Key Concepts",
+      "type": "concepts",
+      "items": [
+        {"term": "Vibe Coding (VC)", "description": "Implementation-focused steps — code, tests, infrastructure, packaging. Organized into 6 phases from setup to release."},
+        {"term": "Vibe Research (VR)", "description": "Research-focused steps — literature review, experimental design, analysis, writing. Organized into 6 phases from positioning to camera-ready."},
+        {"term": "Phase Grouping", "description": "Steps are grouped into phases 0-5: Setup, Data/Schema, Core Implementation, Baselines, Experiments, Packaging/Writing."},
+        {"term": "DesignSpec", "description": "A structured project specification that auto-generates execution steps, milestones, and artifacts when imported."},
+        {"term": "RAG Status", "description": "Red/Amber/Green health indicator per project based on blocked items, overdue milestones, and progress."}
+      ]
+    },
+    {
+      "heading": "Next Actions",
+      "type": "actions",
+      "items": [
+        {"text": "Open the Gold Standard project and read its structured overview", "done": false},
+        {"text": "Expand a VC step and read the prompt_expanded field", "done": false},
+        {"text": "Change a step status from todo to doing", "done": false},
+        {"text": "Open the timeline and review milestone deadlines", "done": false},
+        {"text": "Import a paper into the literature panel", "done": false}
+      ]
+    }
+  ]
+}

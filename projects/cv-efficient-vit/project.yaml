@@ -1,0 +1,14 @@
+id: cv-efficient-vit
+name: Efficient Vision Transformer Pruning for Edge Deployment
+name_en: Efficient Vision Transformer Pruning for Edge Deployment
+definition: Develop structured pruning strategies for ViT models targeting 10x FLOP reduction while maintaining 95% ImageNet accuracy.
+pillar: 'D02: Computer Vision'
+priority: P1
+tags:
+- cv
+- vision-transformer
+- pruning
+- efficiency
+rag: green
+last_activity: '2026-03-06T07:27:19.990016'
+created_at: '2025-01-15T00:00:00'

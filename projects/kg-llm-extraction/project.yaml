@@ -1,0 +1,14 @@
+id: kg-llm-extraction
+name: LLM-Based Knowledge Graph Construction from Unstructured Text
+name_en: LLM-Based Knowledge Graph Construction from Unstructured Text
+definition: Evaluate LLMs as knowledge graph constructors, measuring entity/relation extraction quality, hallucination rates, and schema adherence.
+pillar: 'D11: Knowledge Graphs'
+priority: P1
+tags:
+- knowledge-graph
+- llm
+- extraction
+- construction
+rag: green
+last_activity: '2026-03-06T07:27:21.366084'
+created_at: '2025-01-15T00:00:00'

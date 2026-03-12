@@ -1,0 +1,14 @@
+id: agent-planning-depth
+name: Planning Depth Limits in LLM-Based Agents
+name_en: Planning Depth Limits in LLM-Based Agents
+definition: Measure the maximum planning horizon LLM agents can reliably handle across domains, identifying when plan quality collapses.
+pillar: 'D08: Agentic Systems'
+priority: P0
+tags:
+- agent
+- planning
+- depth
+- evaluation
+rag: green
+last_activity: '2026-03-06T07:27:20.894006'
+created_at: '2025-01-15T00:00:00'

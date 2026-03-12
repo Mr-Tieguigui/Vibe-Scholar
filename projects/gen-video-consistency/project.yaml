@@ -1,0 +1,14 @@
+id: gen-video-consistency
+name: Temporal Consistency in Video Generation Models
+name_en: Temporal Consistency in Video Generation Models
+definition: Benchmark frame-to-frame consistency metrics for video diffusion models across motion, identity preservation, and physics coherence.
+pillar: 'D04: Generative Models'
+priority: P1
+tags:
+- generative
+- video
+- consistency
+- benchmark
+rag: green
+last_activity: '2026-03-06T07:27:20.309821'
+created_at: '2025-01-15T00:00:00'

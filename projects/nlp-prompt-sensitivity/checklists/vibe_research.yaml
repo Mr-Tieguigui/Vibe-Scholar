@@ -1,0 +1,89 @@
+items:
+- id: VR-01
+  section: Phase 0 — Positioning & Scope
+  text: Research positioning & scope definition
+  status: todo
+  notes: Define the paper's contribution relative to existing work, with gap statement
+    and core claims. for Prompt Sensitivity Analysis Across LLM Families.
+  created_at: '2026-03-12T11:32:23.666364'
+  updated_at: null
+- id: VR-02
+  section: Phase 1 — Related Work & Taxonomy
+  text: Literature survey & taxonomy construction
+  status: todo
+  notes: Comprehensive survey of related work with structured taxonomy and comparison
+    table. for Prompt Sensitivity Analysis Across LLM Families.
+  created_at: '2026-03-12T11:32:23.666374'
+  updated_at: null
+- id: VR-03
+  section: Phase 1 — Related Work & Taxonomy
+  text: Gap analysis & positioning refinement
+  status: todo
+  notes: Identify specific gaps in existing work that motivate the proposed approach.
+    for Prompt Sensitivity Analysis Across LLM Families.
+  created_at: '2026-03-12T11:32:23.666377'
+  updated_at: null
+- id: VR-04
+  section: Phase 2 — Method & Design
+  text: Method specification & formal definition
+  status: todo
+  notes: Write formal specification of the proposed method with definitions, notation,
+    and pseudocode. for Prompt Sensitivity Analysis Across LLM Families.
+  created_at: '2026-03-12T11:32:23.666379'
+  updated_at: null
+- id: VR-05
+  section: Phase 2 — Method & Design
+  text: Threat model & validity analysis
+  status: todo
+  notes: Identify threats to validity and design mitigations for the experimental
+    claims. for Prompt Sensitivity Analysis Across LLM Families.
+  created_at: '2026-03-12T11:32:23.666382'
+  updated_at: null
+- id: VR-06
+  section: Phase 3 — Experimental Design
+  text: Experimental protocol & statistical plan
+  status: todo
+  notes: Design the complete experimental protocol with conditions, sample sizes,
+    and statistical tests. for Prompt Sensitivity Analysis Across LLM Families.
+  created_at: '2026-03-12T11:32:23.666385'
+  updated_at: null
+- id: VR-07
+  section: Phase 3 — Experimental Design
+  text: Pilot experiment & calibration
+  status: todo
+  notes: Run reduced pilot to validate methodology and calibrate parameters. for Prompt
+    Sensitivity Analysis Across LLM Families.
+  created_at: '2026-03-12T11:32:23.666387'
+  updated_at: null
+- id: VR-08
+  section: Phase 4 — Results & Analysis
+  text: Full experiment execution & data collection
+  status: todo
+  notes: Execute the complete experimental protocol and collect all results. for Prompt
+    Sensitivity Analysis Across LLM Families.
+  created_at: '2026-03-12T11:32:23.666390'
+  updated_at: null
+- id: VR-09
+  section: Phase 4 — Results & Analysis
+  text: Results analysis & key findings extraction
+  status: todo
+  notes: Analyze results to extract key findings with statistical support. for Prompt
+    Sensitivity Analysis Across LLM Families.
+  created_at: '2026-03-12T11:32:23.666393'
+  updated_at: null
+- id: VR-10
+  section: Phase 5 — Writing & Finalization
+  text: Paper draft with all sections
+  status: todo
+  notes: Write complete paper draft with introduction, method, experiments, results,
+    and conclusion. for Prompt Sensitivity Analysis Across LLM Families.
+  created_at: '2026-03-12T11:32:23.666395'
+  updated_at: null
+- id: VR-11
+  section: Phase 5 — Writing & Finalization
+  text: Figures, tables & camera-ready
+  status: todo
+  notes: Finalize all publication-quality figures and tables; prepare camera-ready
+    version. for Prompt Sensitivity Analysis Across LLM Families.
+  created_at: '2026-03-12T11:32:23.666398'
+  updated_at: null

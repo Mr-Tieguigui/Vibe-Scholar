@@ -1,0 +1,14 @@
+id: kg-temporal-reasoning
+name: Temporal Reasoning Over Dynamic Knowledge Graphs
+name_en: Temporal Reasoning Over Dynamic Knowledge Graphs
+definition: Build and evaluate methods for answering temporal queries (before/after/during/overlaps) over knowledge graphs with time-stamped edges.
+pillar: 'D11: Knowledge Graphs'
+priority: P0
+tags:
+- knowledge-graph
+- temporal
+- reasoning
+- dynamic
+rag: green
+last_activity: '2026-03-06T07:27:21.326254'
+created_at: '2025-01-15T00:00:00'

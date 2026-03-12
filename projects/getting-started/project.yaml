@@ -1,0 +1,13 @@
+id: getting-started
+name: Getting Started with VibeScholar
+name_en: Getting Started with VibeScholar
+definition: A walkthrough project demonstrating how to use VibeScholar for your research. Open the Gold Standard demo project to see how to structure detailed research projects.
+pillar: 'D16: Human-Computer Interaction'
+priority: P0
+tags:
+- guide
+- tutorial
+- onboarding
+rag: green
+last_activity: '2026-03-06T07:27:19.732415'
+created_at: '2025-01-15T00:00:00'

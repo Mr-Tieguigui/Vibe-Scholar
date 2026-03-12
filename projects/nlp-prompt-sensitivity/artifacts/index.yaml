@@ -1,0 +1,85 @@
+artifacts:
+- id: a01
+  type: code
+  name: Core Implementation
+  path: ''
+  description: Main source code for Prompt Sensitivity Analysis Across LLM Families.
+  linked_milestone: M1
+- id: a02
+  type: code
+  name: Test Suite
+  path: ''
+  description: Unit and integration test suite with >80% coverage.
+  linked_milestone: M2
+- id: a03
+  type: code
+  name: Evaluation Pipeline
+  path: ''
+  description: Automated evaluation pipeline computing all metrics.
+  linked_milestone: M3
+- id: a04
+  type: dataset
+  name: Processed Dataset
+  path: ''
+  description: Cleaned and preprocessed dataset ready for experiments.
+  linked_milestone: M4
+- id: a05
+  type: dataset
+  name: Experimental Results
+  path: ''
+  description: Raw and aggregate results from all experimental conditions.
+  linked_milestone: M5
+- id: a06
+  type: figure
+  name: Main Results Figure
+  path: ''
+  description: Primary results visualization comparing proposed method against baselines.
+  linked_milestone: M6
+- id: a07
+  type: figure
+  name: Ablation Results
+  path: ''
+  description: Ablation study results showing individual component contributions.
+  linked_milestone: M1
+- id: a08
+  type: figure
+  name: Architecture Diagram
+  path: ''
+  description: System architecture diagram showing data flow and module interactions.
+  linked_milestone: M2
+- id: a09
+  type: table
+  name: Comparison Table
+  path: ''
+  description: LaTeX table comparing against baselines across all metrics.
+  linked_milestone: M3
+- id: a10
+  type: table
+  name: Ablation Table
+  path: ''
+  description: LaTeX table showing ablation experiment results with significance tests.
+  linked_milestone: M4
+- id: a11
+  type: report
+  name: Paper Draft
+  path: ''
+  description: Conference paper draft for Prompt Sensitivity Analysis Across LLM Families.
+  linked_milestone: M5
+- id: a12
+  type: report
+  name: Technical Report
+  path: ''
+  description: Extended technical report with additional experiments and appendices.
+  linked_milestone: M6
+- id: a13
+  type: code
+  name: Reproducibility Package
+  path: ''
+  description: Single-command reproducibility scripts with pinned dependencies.
+  linked_milestone: M1
+- id: a14
+  type: figure
+  name: Qualitative Examples
+  path: ''
+  description: Qualitative examples showing success and failure cases.
+  linked_milestone: M2

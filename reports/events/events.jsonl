@@ -1,0 +1,11 @@
+{"ts":"2026-03-12T12:23:42.575789","project_id":"nlp-prompt-sensitivity","kind":"literature","action":"import","summary":"CSV imported: 17 papers (0 dups)","ref":{"type":"literature","id":"test.csv"}}
+{"ts":"2026-03-12T13:05:17.221234","project_id":"getting-started","kind":"literature","action":"import","summary":"CSV imported: 14 papers (0 dups)","ref":{"type":"literature","id":"post.csv"}}
+{"ts":"2026-03-12T13:05:22.747848","project_id":"_system","kind":"report","action":"generate","summary":"Daily report generated for 2026-03-12","ref":{"type":"report","id":"2026-03-12"}}
+{"ts":"2026-03-12T13:05:24.490429","project_id":"_system","kind":"report","action":"generate","summary":"Weekly report generated for 2026-W11","ref":{"type":"report","id":"2026-W11"}}
+{"ts":"2026-03-12T13:05:25.855015","project_id":"_system","kind":"report","action":"generate","summary":"Daily report generated for 2026-03-12","ref":{"type":"report","id":"2026-03-12"}}
+{"ts":"2026-03-12T13:05:29.497869","project_id":"_system","kind":"report","action":"generate","summary":"Daily report generated for 2026-03-11","ref":{"type":"report","id":"2026-03-11"}}
+{"ts":"2026-03-12T13:05:33.019817","project_id":"_system","kind":"report","action":"generate","summary":"Daily report generated for 2026-03-10","ref":{"type":"report","id":"2026-03-10"}}
+{"ts":"2026-03-12T13:05:34.915704","project_id":"_system","kind":"report","action":"generate","summary":"Daily report generated for 2026-03-08","ref":{"type":"report","id":"2026-03-08"}}
+{"ts":"2026-03-12T13:05:37.843520","project_id":"_system","kind":"report","action":"generate","summary":"Daily report generated for 2026-03-09","ref":{"type":"report","id":"2026-03-09"}}
+{"ts":"2026-03-12T13:05:40.811240","project_id":"_system","kind":"report","action":"generate","summary":"Daily report generated for 2026-03-06","ref":{"type":"report","id":"2026-03-06"}}
+{"ts":"2026-03-12T13:05:42.522006","project_id":"_system","kind":"report","action":"generate","summary":"Weekly report generated for 2026-W11","ref":{"type":"report","id":"2026-W11"}}

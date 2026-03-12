@@ -1,0 +1,14 @@
+id: dlt-grokking
+name: Grokking Dynamics in Modular Arithmetic Tasks
+name_en: Grokking Dynamics in Modular Arithmetic Tasks
+definition: Study the phase transition from memorization to generalization (grokking) in transformers trained on modular arithmetic, varying model size and regularization.
+pillar: 'D05: Deep Learning Theory'
+priority: P1
+tags:
+- theory
+- grokking
+- generalization
+- phase-transition
+rag: green
+last_activity: '2026-03-06T07:27:20.458375'
+created_at: '2025-01-15T00:00:00'

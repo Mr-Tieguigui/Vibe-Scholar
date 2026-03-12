@@ -1,0 +1,14 @@
+id: nlp-code-switching-robustness
+name: Code-Switching Robustness in Multilingual LLMs
+name_en: Code-Switching Robustness in Multilingual LLMs
+definition: Evaluate how well multilingual models handle intra-sentence code-switching between English and 5 target languages.
+pillar: 'D01: NLP & Language Models'
+priority: P2
+tags:
+- nlp
+- multilingual
+- code-switching
+- robustness
+rag: green
+last_activity: '2026-03-06T07:27:19.916763'
+created_at: '2025-01-15T00:00:00'

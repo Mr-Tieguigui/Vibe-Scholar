@@ -1,0 +1,16 @@
+id: gold-benchmark-agentic-researchops
+name: Tool-Budget Robustness Benchmark for Agentic Research Systems
+name_en: Tool-Budget Robustness Benchmark for Agentic Research Systems
+definition: Build a reproducible benchmark harness that measures how tool-using research agents degrade under budget/latency/noise constraints, with grounded baselines and audit-grade reporting.
+pillar: "D06: Evaluation & Benchmarking"
+priority: P0
+tags:
+  - evaluation
+  - benchmark
+  - agentic-systems
+  - tool-use
+  - robustness
+  - systems-tooling
+rag: green
+last_activity: "2025-03-06T00:00:00"
+created_at: "2025-01-15T00:00:00"

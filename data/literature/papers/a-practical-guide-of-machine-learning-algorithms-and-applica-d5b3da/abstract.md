@@ -1,0 +1,3 @@
+# A Practical Guide of Machine Learning Algorithms and Applications
+
+This article examines the primary subcategories of machine learning: supervised learning, unsupervised learning, and reinforcement learning. Along with decision trees, random forests, artificial neural networks, SVMs, boosting and bagging algorithms, and BP algorithms, it also examines other well-known machine learning techniques. Through the development of theoretical systems, furthering the development of autonomous learning capacities, integrating multiple digital technologies, and promoting customized, bespoke services, the objective is to increase public awareness of machine learning and hasten its rate of adoption

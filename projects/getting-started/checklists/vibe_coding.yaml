@@ -1,0 +1,89 @@
+items:
+- id: VC-01
+  section: Phase 0 — Setup & Repo
+  text: Environment setup & repository scaffold
+  status: done
+  notes: Initialize repository structure, dependency management, CI/CD pipeline, and
+    development tooling. for Getting Started with VibeScholar.
+  created_at: '2026-03-12T11:42:22.318250'
+  updated_at: null
+- id: VC-02
+  section: Phase 1 — Data & Schema
+  text: Data acquisition & preprocessing pipeline
+  status: done
+  notes: Build data ingestion, cleaning, and preprocessing pipeline with validation
+    checks. for Getting Started with VibeScholar.
+  created_at: '2026-03-12T11:42:22.318261'
+  updated_at: null
+- id: VC-03
+  section: Phase 1 — Data & Schema
+  text: Schema definition & data model
+  status: done
+  notes: Define core data models, serialization formats, and storage schemas. for
+    Getting Started with VibeScholar.
+  created_at: '2026-03-12T11:42:22.318265'
+  updated_at: null
+- id: VC-04
+  section: Phase 2 — Core Implementation
+  text: Core guide implementation
+  status: done
+  notes: Implement the primary algorithm or model architecture as specified in the
+    design. for Getting Started with VibeScholar.
+  created_at: '2026-03-12T11:42:22.318268'
+  updated_at: null
+- id: VC-05
+  section: Phase 2 — Core Implementation
+  text: Integration layer & API surface
+  status: done
+  notes: Build the integration layer connecting core components with input/output
+    interfaces. for Getting Started with VibeScholar.
+  created_at: '2026-03-12T11:42:22.318271'
+  updated_at: null
+- id: VC-06
+  section: Phase 3 — Baselines & Comparison
+  text: Baseline implementations
+  status: done
+  notes: Implement baseline methods for controlled comparison against the proposed
+    approach. for Getting Started with VibeScholar.
+  created_at: '2026-03-12T11:42:22.318274'
+  updated_at: null
+- id: VC-07
+  section: Phase 3 — Baselines & Comparison
+  text: Evaluation harness & metrics
+  status: done
+  notes: Build automated evaluation pipeline computing all required metrics with confidence
+    intervals. for Getting Started with VibeScholar.
+  created_at: '2026-03-12T11:42:22.318276'
+  updated_at: null
+- id: VC-08
+  section: Phase 4 — Experiments & Analysis
+  text: Primary experiment execution
+  status: done
+  notes: Run the complete experimental protocol and collect all results. for Getting
+    Started with VibeScholar.
+  created_at: '2026-03-12T11:42:22.318279'
+  updated_at: null
+- id: VC-09
+  section: Phase 4 — Experiments & Analysis
+  text: Ablation studies & sensitivity analysis
+  status: done
+  notes: Run ablation experiments to validate individual component contributions.
+    for Getting Started with VibeScholar.
+  created_at: '2026-03-12T11:42:22.318282'
+  updated_at: null
+- id: VC-10
+  section: Phase 5 — Packaging & Documentation
+  text: Documentation & reproducibility package
+  status: doing
+  notes: Write documentation, create reproducibility scripts, and prepare release
+    artifacts. for Getting Started with VibeScholar.
+  created_at: '2026-03-12T11:42:22.318284'
+  updated_at: null
+- id: VC-11
+  section: Phase 5 — Packaging & Documentation
+  text: Visualization & demo
+  status: doing
+  notes: Build interactive visualization or demo showcasing key results. for Getting
+    Started with VibeScholar.
+  created_at: '2026-03-12T11:42:22.318287'
+  updated_at: null

@@ -1,0 +1,14 @@
+id: de-data-attribution
+name: Training Data Attribution for Model Predictions
+name_en: Training Data Attribution for Model Predictions
+definition: Implement influence function and datamodel-based attribution methods to trace model predictions back to specific training examples.
+pillar: 'D07: Data Engineering'
+priority: P2
+tags:
+- data
+- attribution
+- influence-functions
+- interpretability
+rag: green
+last_activity: '2026-03-06T07:27:20.857929'
+created_at: '2025-01-15T00:00:00'

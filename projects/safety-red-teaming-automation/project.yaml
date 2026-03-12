@@ -1,0 +1,15 @@
+id: safety-red-teaming-automation
+name: Automated Red-Teaming Pipeline for LLM Safety Testing
+name_en: Automated Red-Teaming Pipeline for LLM Safety Testing
+definition: Build an automated red-teaming pipeline that generates diverse adversarial prompts, evaluates model responses, and produces structured safety reports with severity scoring.
+pillar: 'D09: Safety & Alignment'
+priority: P1
+tags:
+- safety
+- red-teaming
+- automation
+- adversarial
+- testing
+rag: green
+last_activity: '2026-03-06T07:28:36.814016'
+created_at: '2025-01-15T00:00:00'

@@ -1,0 +1,14 @@
+id: cv-3d-reconstruction
+name: Neural 3D Reconstruction from Sparse Multi-View Images
+name_en: Neural 3D Reconstruction from Sparse Multi-View Images
+definition: Evaluate NeRF and 3D Gaussian Splatting variants for scene reconstruction from 3-5 input views with quantitative metrics.
+pillar: 'D02: Computer Vision'
+priority: P2
+tags:
+- cv
+- 3d-reconstruction
+- nerf
+- gaussian-splatting
+rag: green
+last_activity: '2026-03-06T07:27:20.086943'
+created_at: '2025-01-15T00:00:00'

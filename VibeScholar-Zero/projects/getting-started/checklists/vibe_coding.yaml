@@ -1,0 +1,16 @@
+items:
+- id: VC-01
+  text: "Create your first project"
+  status: todo
+- id: VC-02
+  text: "Write a structured overview"
+  status: todo
+- id: VC-03
+  text: "Add execution steps"
+  status: todo
+- id: VC-04
+  text: "Set milestones"
+  status: todo
+- id: VC-05
+  text: "Import literature"
+  status: todo

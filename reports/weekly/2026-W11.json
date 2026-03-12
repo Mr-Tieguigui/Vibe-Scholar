@@ -1,0 +1,16 @@
+{
+  "total": 10,
+  "by_kind": {
+    "literature": 2,
+    "report": 8
+  },
+  "by_action": {
+    "import": 2,
+    "generate": 8
+  },
+  "by_project": {
+    "nlp-prompt-sensitivity": 1,
+    "getting-started": 1,
+    "_system": 8
+  }
+}

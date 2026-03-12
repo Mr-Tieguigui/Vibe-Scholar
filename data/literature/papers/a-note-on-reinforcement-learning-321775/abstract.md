@@ -1,0 +1,3 @@
+# A Note on Reinforcement Learning
+
+In the past decade, deep reinforcement learning (DRL) has drawn much attention in theoretical research, meanwhile, it has seen huge success across multiple application areas, such as combinatorial optimization, recommender systems, autonomous driving, intelligent healthcare system and robotics. As one of three basic machine learning paradigms, reinforcement learning concerns with how intelligent agents learn in an interactive environment through trial and error to maximize the total cumulative reward of the agents. Even though many progresses of reinforcement learning have been presented, there are still many challenging research topics due to the complexity of the problems.

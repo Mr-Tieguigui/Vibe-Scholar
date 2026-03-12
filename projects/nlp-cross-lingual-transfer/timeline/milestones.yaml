@@ -1,0 +1,37 @@
+milestones:
+- id: M1
+  title: Repository & environment setup
+  acceptance: CI pipeline green; all dependencies installed; README complete
+  deadline: '2025-02-15'
+  status: in_progress
+  owner: ''
+- id: M2
+  title: Data pipeline & schema complete
+  acceptance: Data loads and validates; schema documentation generated
+  deadline: '2025-03-01'
+  status: done
+  owner: ''
+- id: M3
+  title: Core implementation & unit tests
+  acceptance: Core module passes all tests; code coverage > 80%
+  deadline: '2025-03-15'
+  status: overdue
+  owner: ''
+- id: M4
+  title: Baselines & evaluation harness
+  acceptance: All baselines run; metrics computed; comparison table generated
+  deadline: '2025-03-29'
+  status: in_progress
+  owner: ''
+- id: M5
+  title: Full experiments & analysis
+  acceptance: All conditions complete; key findings documented with CIs
+  deadline: '2025-04-12'
+  status: in_progress
+  owner: ''
+- id: M6
+  title: Paper draft & camera-ready
+  acceptance: Paper compiles; all figures/tables present; submission ready
+  deadline: '2025-04-26'
+  status: pending
+  owner: ''

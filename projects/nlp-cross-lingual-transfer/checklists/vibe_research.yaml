@@ -1,0 +1,89 @@
+items:
+- id: VR-01
+  section: Phase 0 — Positioning & Scope
+  text: Research positioning & scope definition
+  status: done
+  notes: Define the paper's contribution relative to existing work, with gap statement
+    and core claims. for Cross-Lingual Zero-Shot Transfer for Low-Resource NER.
+  created_at: '2026-03-12T11:41:33.466766'
+  updated_at: null
+- id: VR-02
+  section: Phase 1 — Related Work & Taxonomy
+  text: Literature survey & taxonomy construction
+  status: done
+  notes: Comprehensive survey of related work with structured taxonomy and comparison
+    table. for Cross-Lingual Zero-Shot Transfer for Low-Resource NER.
+  created_at: '2026-03-12T11:41:33.466781'
+  updated_at: null
+- id: VR-03
+  section: Phase 1 — Related Work & Taxonomy
+  text: Gap analysis & positioning refinement
+  status: done
+  notes: Identify specific gaps in existing work that motivate the proposed approach.
+    for Cross-Lingual Zero-Shot Transfer for Low-Resource NER.
+  created_at: '2026-03-12T11:41:33.466786'
+  updated_at: null
+- id: VR-04
+  section: Phase 2 — Method & Design
+  text: Method specification & formal definition
+  status: done
+  notes: Write formal specification of the proposed method with definitions, notation,
+    and pseudocode. for Cross-Lingual Zero-Shot Transfer for Low-Resource NER.
+  created_at: '2026-03-12T11:41:33.466790'
+  updated_at: null
+- id: VR-05
+  section: Phase 2 — Method & Design
+  text: Threat model & validity analysis
+  status: done
+  notes: Identify threats to validity and design mitigations for the experimental
+    claims. for Cross-Lingual Zero-Shot Transfer for Low-Resource NER.
+  created_at: '2026-03-12T11:41:33.466794'
+  updated_at: null
+- id: VR-06
+  section: Phase 3 — Experimental Design
+  text: Experimental protocol & statistical plan
+  status: done
+  notes: Design the complete experimental protocol with conditions, sample sizes,
+    and statistical tests. for Cross-Lingual Zero-Shot Transfer for Low-Resource NER.
+  created_at: '2026-03-12T11:41:33.466799'
+  updated_at: null
+- id: VR-07
+  section: Phase 3 — Experimental Design
+  text: Pilot experiment & calibration
+  status: done
+  notes: Run reduced pilot to validate methodology and calibrate parameters. for Cross-Lingual
+    Zero-Shot Transfer for Low-Resource NER.
+  created_at: '2026-03-12T11:41:33.466803'
+  updated_at: null
+- id: VR-08
+  section: Phase 4 — Results & Analysis
+  text: Full experiment execution & data collection
+  status: doing
+  notes: Execute the complete experimental protocol and collect all results. for Cross-Lingual
+    Zero-Shot Transfer for Low-Resource NER.
+  created_at: '2026-03-12T11:41:33.466807'
+  updated_at: null
+- id: VR-09
+  section: Phase 4 — Results & Analysis
+  text: Results analysis & key findings extraction
+  status: done
+  notes: Analyze results to extract key findings with statistical support. for Cross-Lingual
+    Zero-Shot Transfer for Low-Resource NER.
+  created_at: '2026-03-12T11:41:33.466812'
+  updated_at: null
+- id: VR-10
+  section: Phase 5 — Writing & Finalization
+  text: Paper draft with all sections
+  status: done
+  notes: Write complete paper draft with introduction, method, experiments, results,
+    and conclusion. for Cross-Lingual Zero-Shot Transfer for Low-Resource NER.
+  created_at: '2026-03-12T11:41:33.466816'
+  updated_at: null
+- id: VR-11
+  section: Phase 5 — Writing & Finalization
+  text: Figures, tables & camera-ready
+  status: todo
+  notes: Finalize all publication-quality figures and tables; prepare camera-ready
+    version. for Cross-Lingual Zero-Shot Transfer for Low-Resource NER.
+  created_at: '2026-03-12T11:41:33.466820'
+  updated_at: null

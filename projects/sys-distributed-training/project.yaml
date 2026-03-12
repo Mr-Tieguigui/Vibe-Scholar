@@ -1,0 +1,14 @@
+id: sys-distributed-training
+name: Communication-Efficient Distributed Training for MoE Models
+name_en: Communication-Efficient Distributed Training for MoE Models
+definition: Optimize all-to-all communication patterns in distributed MoE training, measuring throughput gains from expert parallelism and load balancing.
+pillar: 'D14: Systems & Tooling'
+priority: P2
+tags:
+- systems
+- distributed-training
+- moe
+- communication
+rag: green
+last_activity: '2026-03-06T07:27:21.838534'
+created_at: '2025-01-15T00:00:00'

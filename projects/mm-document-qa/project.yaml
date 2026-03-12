@@ -1,0 +1,14 @@
+id: mm-document-qa
+name: Multi-Page Document QA with Layout Understanding
+name_en: Multi-Page Document QA with Layout Understanding
+definition: Benchmark question-answering over multi-page documents requiring layout-aware reasoning across tables, figures, and text.
+pillar: 'D10: Multimodal Learning'
+priority: P2
+tags:
+- multimodal
+- document-qa
+- layout
+- multi-page
+rag: green
+last_activity: '2026-03-06T07:27:21.290319'
+created_at: '2025-01-15T00:00:00'

@@ -1,0 +1,14 @@
+id: agent-memory-architecture
+name: Long-Term Memory Architectures for Persistent Agents
+name_en: Long-Term Memory Architectures for Persistent Agents
+definition: Compare memory architectures (vector DB, structured KG, episodic buffer) for agents operating across multi-day task horizons.
+pillar: 'D08: Agentic Systems'
+priority: P1
+tags:
+- agent
+- memory
+- architecture
+- persistence
+rag: green
+last_activity: '2026-03-06T07:27:20.965966'
+created_at: '2025-01-15T00:00:00'

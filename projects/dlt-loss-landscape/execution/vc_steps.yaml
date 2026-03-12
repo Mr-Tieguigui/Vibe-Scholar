@@ -1,0 +1,391 @@
+steps:
+- id: VC-01
+  title: Environment setup & repository scaffold
+  description: Initialize repository structure, dependency management, CI/CD pipeline, and development tooling. for Loss Landscape Topology of Fine-Tuned LLMs.
+  acceptance: Repository builds; linters pass; CI pipeline green; README with setup instructions complete
+  section: Phase 0 — Setup & Repo
+  phase: 0
+  status: todo
+  linked_milestone: M1
+  designspec_refs: []
+  deliverables:
+  - Source code for environment setup & repository scaffold
+  - Unit tests with >80% coverage
+  - Documentation and usage examples
+  prompt_hint: 'Initialize repository structure, dependency management, CI/CD pipeline, and development tooling. Context: Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using
+    Hessian spectra'
+  prompt_expanded: '## Context
+
+    Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectral analysis and mode connectivity.
+
+
+    ## Plan
+
+    - [ ] Implement environment setup & repository scaffold
+
+    - [ ] Write unit tests
+
+    - [ ] Document API and usage
+
+
+    ## Verification
+
+    ```bash
+
+    make test
+
+    ```'
+- id: VC-02
+  title: Data acquisition & preprocessing pipeline
+  description: Build data ingestion, cleaning, and preprocessing pipeline with validation checks. for Loss Landscape Topology of Fine-Tuned LLMs.
+  acceptance: Pipeline processes all source data formats; validation tests pass; data quality report generated
+  section: Phase 1 — Data & Schema
+  phase: 1
+  status: todo
+  linked_milestone: M2
+  designspec_refs: []
+  deliverables:
+  - Source code for data acquisition & preprocessing pipeline
+  - Unit tests with >80% coverage
+  - Documentation and usage examples
+  prompt_hint: 'Build data ingestion, cleaning, and preprocessing pipeline with validation checks. Context: Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectra'
+  prompt_expanded: '## Context
+
+    Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectral analysis and mode connectivity.
+
+
+    ## Plan
+
+    - [ ] Implement data acquisition & preprocessing pipeline
+
+    - [ ] Write unit tests
+
+    - [ ] Document API and usage
+
+
+    ## Verification
+
+    ```bash
+
+    make test
+
+    ```'
+- id: VC-03
+  title: Schema definition & data model
+  description: Define core data models, serialization formats, and storage schemas. for Loss Landscape Topology of Fine-Tuned LLMs.
+  acceptance: Pydantic models validate; roundtrip serialization tests pass; schema documentation generated
+  section: Phase 1 — Data & Schema
+  phase: 1
+  status: todo
+  linked_milestone: M2
+  designspec_refs: []
+  deliverables:
+  - Source code for schema definition & data model
+  - Unit tests with >80% coverage
+  - Documentation and usage examples
+  prompt_hint: 'Define core data models, serialization formats, and storage schemas. Context: Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectra'
+  prompt_expanded: '## Context
+
+    Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectral analysis and mode connectivity.
+
+
+    ## Plan
+
+    - [ ] Implement schema definition & data model
+
+    - [ ] Write unit tests
+
+    - [ ] Document API and usage
+
+
+    ## Verification
+
+    ```bash
+
+    make test
+
+    ```'
+- id: VC-04
+  title: Core theory implementation
+  description: Implement the primary algorithm or model architecture as specified in the design. for Loss Landscape Topology of Fine-Tuned LLMs.
+  acceptance: Core module passes unit tests; produces expected output on sample data; code coverage > 80%
+  section: Phase 2 — Core Implementation
+  phase: 2
+  status: todo
+  linked_milestone: M3
+  designspec_refs: []
+  deliverables:
+  - Source code for core theory implementation
+  - Unit tests with >80% coverage
+  - Documentation and usage examples
+  prompt_hint: 'Implement the primary algorithm or model architecture as specified in the design. Context: Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectra'
+  prompt_expanded: '## Context
+
+    Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectral analysis and mode connectivity.
+
+
+    ## Plan
+
+    - [ ] Implement core theory implementation
+
+    - [ ] Write unit tests
+
+    - [ ] Document API and usage
+
+
+    ## Verification
+
+    ```bash
+
+    make test
+
+    ```'
+- id: VC-05
+  title: Integration layer & API surface
+  description: Build the integration layer connecting core components with input/output interfaces. for Loss Landscape Topology of Fine-Tuned LLMs.
+  acceptance: End-to-end pipeline runs on sample data; API tests pass; response format matches spec
+  section: Phase 2 — Core Implementation
+  phase: 2
+  status: todo
+  linked_milestone: M3
+  designspec_refs: []
+  deliverables:
+  - Source code for integration layer & api surface
+  - Unit tests with >80% coverage
+  - Documentation and usage examples
+  prompt_hint: 'Build the integration layer connecting core components with input/output interfaces. Context: Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian
+    spectra'
+  prompt_expanded: '## Context
+
+    Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectral analysis and mode connectivity.
+
+
+    ## Plan
+
+    - [ ] Implement integration layer & api surface
+
+    - [ ] Write unit tests
+
+    - [ ] Document API and usage
+
+
+    ## Verification
+
+    ```bash
+
+    make test
+
+    ```'
+- id: VC-06
+  title: Baseline implementations
+  description: Implement baseline methods for controlled comparison against the proposed approach. for Loss Landscape Topology of Fine-Tuned LLMs.
+  acceptance: All baselines run on eval split; results reproducible across seeds; comparison table generated
+  section: Phase 3 — Baselines & Comparison
+  phase: 3
+  status: todo
+  linked_milestone: M4
+  designspec_refs: []
+  deliverables:
+  - Source code for baseline implementations
+  - Unit tests with >80% coverage
+  - Documentation and usage examples
+  prompt_hint: 'Implement baseline methods for controlled comparison against the proposed approach. Context: Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian
+    spectra'
+  prompt_expanded: '## Context
+
+    Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectral analysis and mode connectivity.
+
+
+    ## Plan
+
+    - [ ] Implement baseline implementations
+
+    - [ ] Write unit tests
+
+    - [ ] Document API and usage
+
+
+    ## Verification
+
+    ```bash
+
+    make test
+
+    ```'
+- id: VC-07
+  title: Evaluation harness & metrics
+  description: Build automated evaluation pipeline computing all required metrics with confidence intervals. for Loss Landscape Topology of Fine-Tuned LLMs.
+  acceptance: Metrics match hand-computed values on 3 samples; CI computed via bootstrap; output CSV validated
+  section: Phase 3 — Baselines & Comparison
+  phase: 3
+  status: todo
+  linked_milestone: M4
+  designspec_refs: []
+  deliverables:
+  - Source code for evaluation harness & metrics
+  - Unit tests with >80% coverage
+  - Documentation and usage examples
+  prompt_hint: 'Build automated evaluation pipeline computing all required metrics with confidence intervals. Context: Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using
+    Hessian spectra'
+  prompt_expanded: '## Context
+
+    Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectral analysis and mode connectivity.
+
+
+    ## Plan
+
+    - [ ] Implement evaluation harness & metrics
+
+    - [ ] Write unit tests
+
+    - [ ] Document API and usage
+
+
+    ## Verification
+
+    ```bash
+
+    make test
+
+    ```'
+- id: VC-08
+  title: Primary experiment execution
+  description: Run the complete experimental protocol and collect all results. for Loss Landscape Topology of Fine-Tuned LLMs.
+  acceptance: All experimental conditions complete; no missing data; aggregate results table generated
+  section: Phase 4 — Experiments & Analysis
+  phase: 4
+  status: todo
+  linked_milestone: M5
+  designspec_refs: []
+  deliverables:
+  - Source code for primary experiment execution
+  - Unit tests with >80% coverage
+  - Documentation and usage examples
+  prompt_hint: 'Run the complete experimental protocol and collect all results. Context: Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectra'
+  prompt_expanded: '## Context
+
+    Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectral analysis and mode connectivity.
+
+
+    ## Plan
+
+    - [ ] Implement primary experiment execution
+
+    - [ ] Write unit tests
+
+    - [ ] Document API and usage
+
+
+    ## Verification
+
+    ```bash
+
+    make test
+
+    ```'
+- id: VC-09
+  title: Ablation studies & sensitivity analysis
+  description: Run ablation experiments to validate individual component contributions. for Loss Landscape Topology of Fine-Tuned LLMs.
+  acceptance: Ablation table shows contribution of each component; statistical significance tested
+  section: Phase 4 — Experiments & Analysis
+  phase: 4
+  status: todo
+  linked_milestone: M5
+  designspec_refs: []
+  deliverables:
+  - Source code for ablation studies & sensitivity analysis
+  - Unit tests with >80% coverage
+  - Documentation and usage examples
+  prompt_hint: 'Run ablation experiments to validate individual component contributions. Context: Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectra'
+  prompt_expanded: '## Context
+
+    Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectral analysis and mode connectivity.
+
+
+    ## Plan
+
+    - [ ] Implement ablation studies & sensitivity analysis
+
+    - [ ] Write unit tests
+
+    - [ ] Document API and usage
+
+
+    ## Verification
+
+    ```bash
+
+    make test
+
+    ```'
+- id: VC-10
+  title: Documentation & reproducibility package
+  description: Write documentation, create reproducibility scripts, and prepare release artifacts. for Loss Landscape Topology of Fine-Tuned LLMs.
+  acceptance: README complete; requirements pinned; single-command reproduction works; all tests pass
+  section: Phase 5 — Packaging & Documentation
+  phase: 5
+  status: todo
+  linked_milestone: M6
+  designspec_refs: []
+  deliverables:
+  - Source code for documentation & reproducibility package
+  - Unit tests with >80% coverage
+  - Documentation and usage examples
+  prompt_hint: 'Write documentation, create reproducibility scripts, and prepare release artifacts. Context: Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian
+    spectra'
+  prompt_expanded: '## Context
+
+    Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectral analysis and mode connectivity.
+
+
+    ## Plan
+
+    - [ ] Implement documentation & reproducibility package
+
+    - [ ] Write unit tests
+
+    - [ ] Document API and usage
+
+
+    ## Verification
+
+    ```bash
+
+    make test
+
+    ```'
+- id: VC-11
+  title: Visualization & demo
+  description: Build interactive visualization or demo showcasing key results. for Loss Landscape Topology of Fine-Tuned LLMs.
+  acceptance: Demo runs locally; shows key findings; screenshots captured for paper/README
+  section: Phase 5 — Packaging & Documentation
+  phase: 5
+  status: todo
+  linked_milestone: M6
+  designspec_refs: []
+  deliverables:
+  - Source code for visualization & demo
+  - Unit tests with >80% coverage
+  - Documentation and usage examples
+  prompt_hint: 'Build interactive visualization or demo showcasing key results. Context: Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectra'
+  prompt_expanded: '## Context
+
+    Analyze how fine-tuning alters the loss landscape topology of pre-trained LLMs using Hessian spectral analysis and mode connectivity.
+
+
+    ## Plan
+
+    - [ ] Implement visualization & demo
+
+    - [ ] Write unit tests
+
+    - [ ] Document API and usage
+
+
+    ## Verification
+
+    ```bash
+
+    make test
+
+    ```'

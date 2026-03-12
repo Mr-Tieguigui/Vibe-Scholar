@@ -1,0 +1,14 @@
+id: eval-contamination-detection
+name: Benchmark Contamination Detection Suite
+name_en: Benchmark Contamination Detection Suite
+definition: Build a suite of statistical tests for detecting training data contamination in LLM benchmark results, with synthetic control experiments.
+pillar: 'D06: Evaluation & Benchmarking'
+priority: P0
+tags:
+- evaluation
+- contamination
+- benchmark
+- statistical-tests
+rag: green
+last_activity: '2026-03-06T07:27:20.532516'
+created_at: '2025-01-15T00:00:00'

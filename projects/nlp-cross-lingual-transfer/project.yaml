@@ -1,0 +1,15 @@
+id: nlp-cross-lingual-transfer
+name: Cross-Lingual Zero-Shot Transfer for Low-Resource NER
+name_en: Cross-Lingual Zero-Shot Transfer for Low-Resource NER
+definition: Evaluate cross-lingual transfer from high-resource to low-resource languages for named entity recognition using multilingual transformers.
+pillar: 'D01: NLP & Language Models'
+priority: P0
+tags:
+- nlp
+- ner
+- multilingual
+- zero-shot
+- transfer-learning
+rag: green
+last_activity: '2026-03-06T07:27:19.769783'
+created_at: '2025-01-15T00:00:00'

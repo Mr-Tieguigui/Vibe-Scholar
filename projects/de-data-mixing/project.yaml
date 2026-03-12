@@ -1,0 +1,14 @@
+id: de-data-mixing
+name: Optimal Data Mixing Ratios for Pre-Training
+name_en: Optimal Data Mixing Ratios for Pre-Training
+definition: Systematically search data mixing ratios across code, web text, books, and academic papers for pre-training, measuring downstream task impact.
+pillar: 'D07: Data Engineering'
+priority: P0
+tags:
+- data
+- pre-training
+- mixing
+- optimization
+rag: green
+last_activity: '2026-03-06T07:27:20.749556'
+created_at: '2025-01-15T00:00:00'

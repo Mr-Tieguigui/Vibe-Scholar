@@ -1,0 +1,14 @@
+id: hci-ai-pair-programming
+name: AI Pair Programming Effectiveness Across Experience Levels
+name_en: AI Pair Programming Effectiveness Across Experience Levels
+definition: Controlled study measuring how AI code assistants affect productivity, code quality, and learning outcomes for junior vs senior developers.
+pillar: 'D16: Human-Computer Interaction'
+priority: P0
+tags:
+- hci
+- pair-programming
+- ai-assistant
+- user-study
+rag: green
+last_activity: '2026-03-06T07:27:21.983890'
+created_at: '2025-01-15T00:00:00'

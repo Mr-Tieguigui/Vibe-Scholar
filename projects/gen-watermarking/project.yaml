@@ -1,0 +1,14 @@
+id: gen-watermarking
+name: Robust Watermarking for AI-Generated Content
+name_en: Robust Watermarking for AI-Generated Content
+definition: Develop and evaluate watermarking schemes for LLM text and diffusion images that survive compression, paraphrasing, and editing.
+pillar: 'D04: Generative Models'
+priority: P1
+tags:
+- generative
+- watermarking
+- robustness
+- detection
+rag: green
+last_activity: '2026-03-06T07:27:20.346969'
+created_at: '2025-01-15T00:00:00'

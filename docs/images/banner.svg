@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#312e81"/>
+      <stop offset="50%" stop-color="#4338ca"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#a5b4fc"/>
+      <stop offset="100%" stop-color="#c4b5fd"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="300" rx="16" fill="url(#bg)"/>
+  <!-- Subtle grid pattern -->
+  <g opacity="0.06" stroke="white" stroke-width="1">
+    <line x1="0" y1="50" x2="1200" y2="50"/><line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="150" x2="1200" y2="150"/><line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="250" x2="1200" y2="250"/>
+    <line x1="100" y1="0" x2="100" y2="300"/><line x1="200" y1="0" x2="200" y2="300"/>
+    <line x1="300" y1="0" x2="300" y2="300"/><line x1="400" y1="0" x2="400" y2="300"/>
+    <line x1="500" y1="0" x2="500" y2="300"/><line x1="600" y1="0" x2="600" y2="300"/>
+    <line x1="700" y1="0" x2="700" y2="300"/><line x1="800" y1="0" x2="800" y2="300"/>
+    <line x1="900" y1="0" x2="900" y2="300"/><line x1="1000" y1="0" x2="1000" y2="300"/>
+    <line x1="1100" y1="0" x2="1100" y2="300"/>
+  </g>
+  <!-- Icon hexagon -->
+  <g transform="translate(160,150) scale(1.8)">
+    <polygon points="0,-28 24.2,-14 24.2,14 0,28 -24.2,14 -24.2,-14" stroke="white" stroke-width="2.2" stroke-linejoin="round" fill="none" opacity="0.9"/>
+    <path d="M-12,0 Q-6,-12 0,0 T 12,0 T 18,0" stroke="white" stroke-width="2.2" stroke-linecap="round" fill="none" opacity="0.9"/>
+    <polyline points="-6,-7 -12,0 -6,7" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9"/>
+    <polyline points="6,-7 12,0 6,7" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.9"/>
+    <circle cx="0" cy="0" r="2.2" fill="white" opacity="0.9"/>
+  </g>
+  <!-- Title -->
+  <text x="280" y="125" fill="white" font-family="system-ui,-apple-system,sans-serif" font-size="56" font-weight="800" letter-spacing="-1">VibeScholar</text>
+  <!-- Tagline -->
+  <text x="280" y="170" fill="url(#accent)" font-family="system-ui,-apple-system,sans-serif" font-size="20" font-weight="500">Human-in-the-Loop Vibe Scholar Research</text>
+  <text x="280" y="200" fill="white" font-family="system-ui,-apple-system,sans-serif" font-size="16" font-weight="400" opacity="0.7">An Efficient Multi-Project Research Management Platform</text>
+  <!-- Badges row -->
+  <text x="280" y="248" fill="white" font-family="ui-monospace,monospace" font-size="13" opacity="0.5">Python 3.12+ · FastAPI · React 18 · TailwindCSS v4 · Zero API Keys Required</text>
+</svg>

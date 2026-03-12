@@ -1,0 +1,14 @@
+id: bio-drug-interaction
+name: Drug-Drug Interaction Prediction with LLM Augmentation
+name_en: Drug-Drug Interaction Prediction with LLM Augmentation
+definition: Augment graph-based DDI prediction with LLM-generated molecular descriptions and pharmacological knowledge, measuring interaction prediction improvement.
+pillar: 'D13: Computational Biology'
+priority: P1
+tags:
+- biology
+- drug-interaction
+- llm
+- molecular
+rag: green
+last_activity: '2026-03-06T07:27:21.646940'
+created_at: '2025-01-15T00:00:00'

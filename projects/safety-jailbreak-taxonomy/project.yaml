@@ -1,0 +1,15 @@
+id: safety-jailbreak-taxonomy
+name: Jailbreak Attack Taxonomy and Defense Benchmark
+name_en: Jailbreak Attack Taxonomy and Defense Benchmark
+definition: Create a comprehensive taxonomy of LLM jailbreak techniques with a standardized defense evaluation benchmark across 5 model families.
+pillar: 'D09: Safety & Alignment'
+priority: P0
+tags:
+- safety
+- jailbreak
+- taxonomy
+- benchmark
+- defense
+rag: green
+last_activity: '2026-03-06T07:27:21.037985'
+created_at: '2025-01-15T00:00:00'

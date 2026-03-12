@@ -1,0 +1,53 @@
+steps:
+- id: VR-01
+  title: "Define your research question"
+  description: "Write a clear research question with gap statement and 3 core claims."
+  acceptance: "Research question documented with gap analysis and claims"
+  section: "Phase 0 — Positioning"
+  phase: 0
+  status: todo
+  linked_milestone: M1
+  designspec_refs: []
+  deliverables:
+    - "Research question with gap statement"
+  prompt_hint: "Define a focused research question with a clear gap in the literature."
+  prompt_expanded: ""
+- id: VR-02
+  title: "Survey related work"
+  description: "Find and import 10+ related papers. Write a brief survey with themes and gaps."
+  acceptance: "10 papers imported; survey document with 3 themes written"
+  section: "Phase 1 — Related Work"
+  phase: 1
+  status: todo
+  linked_milestone: M2
+  designspec_refs: []
+  deliverables:
+    - "Related work survey with 3 themes"
+  prompt_hint: "Write a related work survey with 3 themes for your research."
+  prompt_expanded: ""
+- id: VR-03
+  title: "Design experiments"
+  description: "Plan your experimental protocol with conditions, metrics, and statistical tests."
+  acceptance: "Experiment design document with conditions and metrics specified"
+  section: "Phase 2 — Experimental Design"
+  phase: 2
+  status: todo
+  linked_milestone: M2
+  designspec_refs: []
+  deliverables:
+    - "Experimental protocol document"
+  prompt_hint: "Design an experimental protocol with conditions and evaluation metrics."
+  prompt_expanded: ""
+- id: VR-04
+  title: "Write paper draft"
+  description: "Write a first complete draft with Introduction, Method, Experiments, and Conclusion."
+  acceptance: "Draft has all sections; no placeholder text"
+  section: "Phase 3 — Writing"
+  phase: 5
+  status: todo
+  linked_milestone: M3
+  designspec_refs: []
+  deliverables:
+    - "Complete paper draft"
+  prompt_hint: "Write a first draft of your research paper with all required sections."
+  prompt_expanded: ""

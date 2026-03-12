@@ -1,0 +1,14 @@
+id: sys-kv-cache
+name: KV-Cache Compression for Long-Context Serving
+name_en: KV-Cache Compression for Long-Context Serving
+definition: Benchmark KV-cache compression methods (quantization, eviction, streaming) for serving long-context LLMs under memory constraints.
+pillar: 'D14: Systems & Tooling'
+priority: P1
+tags:
+- systems
+- kv-cache
+- compression
+- long-context
+rag: green
+last_activity: '2026-03-06T07:27:21.802534'
+created_at: '2025-01-15T00:00:00'

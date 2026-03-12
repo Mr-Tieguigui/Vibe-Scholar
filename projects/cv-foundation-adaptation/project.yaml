@@ -1,0 +1,14 @@
+id: cv-foundation-adaptation
+name: Foundation Model Adaptation with 1% Labeled Data
+name_en: Foundation Model Adaptation with 1% Labeled Data
+definition: Benchmark parameter-efficient fine-tuning methods (LoRA, adapters, prompt tuning) for vision foundation models under extreme label scarcity.
+pillar: 'D02: Computer Vision'
+priority: P0
+tags:
+- cv
+- foundation-models
+- few-shot
+- peft
+rag: green
+last_activity: '2026-03-06T07:27:20.026625'
+created_at: '2025-01-15T00:00:00'

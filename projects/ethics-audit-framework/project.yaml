@@ -1,0 +1,15 @@
+id: ethics-audit-framework
+name: Algorithmic Audit Framework for LLM Deployments
+name_en: Algorithmic Audit Framework for LLM Deployments
+definition: Design and validate a structured audit framework for LLM deployments covering bias, fairness, transparency, and accountability dimensions.
+pillar: 'D15: Ethics & Governance'
+priority: P0
+tags:
+- ethics
+- audit
+- framework
+- deployment
+- fairness
+rag: green
+last_activity: '2026-03-06T07:27:21.874945'
+created_at: '2025-01-15T00:00:00'

@@ -1,0 +1,15 @@
+id: hci-trust-calibration
+name: Trust Calibration in AI-Assisted Medical Diagnosis
+name_en: Trust Calibration in AI-Assisted Medical Diagnosis
+definition: Measure and improve clinician trust calibration (appropriate reliance vs over-reliance) when using AI-assisted diagnostic tools.
+pillar: 'D16: Human-Computer Interaction'
+priority: P1
+tags:
+- hci
+- trust
+- calibration
+- medical
+- ai-assistance
+rag: green
+last_activity: '2026-03-06T07:27:22.056669'
+created_at: '2025-01-15T00:00:00'

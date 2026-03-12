@@ -1,0 +1,3 @@
+# Deep reinforcement learning: a survey
+
+Deep reinforcement learning (RL) has become one of the most popular topics in artificial intelligence research. It has been widely used in various fields, such as end-to-end control, robotic control, recommendation systems, and natural language dialogue systems. In this survey, we systematically categorize the deep RL algorithms and applications, and provide a detailed review over existing deep RL algorithms by dividing them into modelbased methods, model-free methods, and advanced RL methods. We thoroughly analyze the advances including exploration, inverse RL, and transfer RL. Finally, we outline the current representative applications, and analyze four open problems for future research.

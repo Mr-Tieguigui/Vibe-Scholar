@@ -1,0 +1,3 @@
+# Simulating Human-like Navigation in Urban Transportation Environments with Multi-Agent Deep (Inverse) Reinforcement Learning
+
+This paper focuses on an approach that uses two methodologies: Maximum Entropy Inverse Reinforcement Learning and Multi-Agent Deep reinforcement learning. It focuses on each method in a adequately profound manner. The nature of data is also specified and it is also displayed how it is prepared it to suit their purpose. The use of Keras as one of their tools to construct modest deep neural networks. For results, the relation between the outcomes of each method with proper explanation is configured. A brief study of the direction in which the approach can be led forward in the future is analyzed.
