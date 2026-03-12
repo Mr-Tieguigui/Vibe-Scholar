@@ -2,7 +2,7 @@
 
 from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field
 
 
 # ── Project ──────────────────────────────────────────────
@@ -132,13 +132,6 @@ class PaperMeta(BaseModel):
     tags: list[str] = []
     projects: list[str] = []
     pinned: bool = False
-
-    @field_validator("authors", mode="before")
-    @classmethod
-    def _coerce_authors(cls, v):
-        if isinstance(v, list):
-            return "; ".join(str(a) for a in v)
-        return v or ""
 
 
 class PaperNotes(BaseModel):

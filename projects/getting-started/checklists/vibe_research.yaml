@@ -1,34 +1,13 @@
 items:
 - id: VR-01
-  text: Research positioning & scope definition
+  text: "Define your research question"
   status: todo
 - id: VR-02
-  text: Literature survey & taxonomy construction
+  text: "Survey related work"
   status: todo
 - id: VR-03
-  text: Gap analysis & positioning refinement
+  text: "Design experiments"
   status: todo
 - id: VR-04
-  text: Method specification & formal definition
-  status: todo
-- id: VR-05
-  text: Threat model & validity analysis
-  status: todo
-- id: VR-06
-  text: Experimental protocol & statistical plan
-  status: todo
-- id: VR-07
-  text: Pilot experiment & calibration
-  status: todo
-- id: VR-08
-  text: Full experiment execution & data collection
-  status: todo
-- id: VR-09
-  text: Results analysis & key findings extraction
-  status: todo
-- id: VR-10
-  text: Paper draft with all sections
-  status: todo
-- id: VR-11
-  text: Figures, tables & camera-ready
+  text: "Write paper draft"
   status: todo

@@ -188,7 +188,6 @@ VibeScholar/
 ├── docs/
 │   ├── images/                # Screenshots and diagrams
 │   └── GOLD_STANDARD_QA.md   # Quality checklist for demo data
-├── VibeScholar-Zero/          # Clean starter edition (1 project, no demo data)
 ├── DEV_GUIDE.md               # Developer guide
 └── README.md                  # This file
 ```
@@ -218,7 +217,6 @@ VibeScholar ships with **62 synthetic demo projects** covering the breadth of mo
 | **Bioinformatics** | Drug Interaction, Protein Function, Single Cell |
 | **Systems** | Distributed Training, Inference Optimization, KV Cache |
  
-> **Want a clean slate?** Use [VibeScholar-Zero](./VibeScholar-Zero/) — a minimal edition with just the Getting Started project and no demo data.
  
 <p align="center">
   <img src="docs/images/screenshot-demo-projects.png" alt="Demo Projects Grid" width="100%"/>
@@ -276,40 +274,24 @@ VibeScholar auto-detects CSV formats from column headers:
 | **Zotero** | Title, Author, Abstract Note, DOI, Date Added |
  
 Simply export a CSV from your preferred tool and upload via the dashboard. The system normalizes, deduplicates, and links papers to your project.
- 
+
+
 ---
- 
-## VibeScholar-Zero — Clean Starter Edition
- 
-If you prefer to start fresh without demo data, use **[VibeScholar-Zero](./VibeScholar-Zero/)**:
- 
-- 1 project (Getting Started tutorial)
-- Same codebase, same features
-- Perfect for starting your own research workspace
- 
-```bash
-cd VibeScholar-Zero
-pip install -r backend/requirements.txt
-cd frontend && npm install && npm run build && cd ..
-python3 -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8007
-```
- 
----
- 
+
 ## Tech Stack
- 
-| Layer | Technology |
-|-------|-----------|
-| **Backend** | Python 3.12, FastAPI, Pydantic V2, Uvicorn |
-| **Frontend** | React 18, TypeScript, TailwindCSS v4, Vite 7, React Query |
-| **Data** | Plain text files (YAML, JSON, Markdown) — no database needed |
-| **AI Integration** | Optional — any OpenAI/Anthropic/Google compatible API |
-| **Deployment** | Single command (`scripts/deploy_prod.sh`) |
- 
+
+| Layer              | Technology                                                   |
+| ------------------ | ------------------------------------------------------------ |
+| **Backend**        | Python 3.12, FastAPI, Pydantic V2, Uvicorn                   |
+| **Frontend**       | React 18, TypeScript, TailwindCSS v4, Vite 7, React Query    |
+| **Data**           | Plain text files (YAML, JSON, Markdown) — no database needed |
+| **AI Integration** | Optional — any OpenAI/Anthropic/Google compatible API        |
+| **Deployment**     | Single command (`scripts/deploy_prod.sh`)                    |
+
 ---
- 
+
 ## Screenshots Gallery
- 
+
 <table>
 <tr>
 <td width="50%">

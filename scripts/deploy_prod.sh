@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# VibeScholar — One-command production deploy
+# VibeOps — One-command production deploy
 # Usage: bash scripts/deploy_prod.sh
 set -euo pipefail
 
@@ -7,7 +7,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 PORT="${VIBECR_PORT:-8007}"
 HOST="${VIBECR_HOST:-127.0.0.1}"
 
-echo "═══ VibeScholar Production Deploy ═══"
+echo "═══ VibeOps Production Deploy ═══"
 
 # 1. Kill any existing server on the port
 if lsof -i :"$PORT" -t >/dev/null 2>&1; then

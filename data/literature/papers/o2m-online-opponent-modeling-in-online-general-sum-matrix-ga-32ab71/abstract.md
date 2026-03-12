@@ -1,3 +1,0 @@
-# O2M: Online Opponent Modeling in Online General-Sum Matrix Games
-
-This paper focuses on strategy learning in online general-sum games, specifically addressing online matrix games (MGs), where two players control parameters and face an unknown, stochastically varying payoff matrix. The goal is to learn strategies that maximize long-term rewards within this dynamic and uncertain game environment. We introduce Online Opponent Modeling (O2M), a novel algorithm designed to overcome the limitations of OMG-RFTL, which struggles in general-sum game settings. O2M incorporates opponent modeling techniques into online game frameworks, alleviating the non-stationarity issue inherent in multi-agent systems and enabling agents to achieve superior rewards.

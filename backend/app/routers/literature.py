@@ -120,8 +120,7 @@ def _load_all_papers() -> list[dict]:
 
 
 def _save_all_papers(papers: list[dict]) -> None:
-    normalized_papers = [_normalize_paper_entry(p) for p in papers]
-    content = "\n".join(orjson.dumps(p).decode("utf-8") for p in normalized_papers) + "\n"
+    content = "\n".join(orjson.dumps(p).decode("utf-8") for p in papers) + "\n"
     atomic_write(_normalized_path(), content)
 
 
@@ -134,19 +133,10 @@ def _load_project_papers(project_id: str) -> list[dict]:
     return [orjson.loads(l) for l in lines if l.strip()]
 
 
-def _normalize_paper_entry(paper: dict) -> dict:
-    """Normalize paper entry to use 'paper_id' as the primary identifier."""
-    normalized = paper.copy()
-    if "id" in normalized and "paper_id" not in normalized:
-        normalized["paper_id"] = normalized.pop("id")
-    return normalized
-
-
 def _save_project_papers(project_id: str, papers: list[dict]) -> None:
     pdir = settings.projects_dir / project_id / "literature" / "normalized"
     pdir.mkdir(parents=True, exist_ok=True)
-    normalized_papers = [_normalize_paper_entry(p) for p in papers]
-    content = "\n".join(orjson.dumps(p).decode("utf-8") for p in normalized_papers) + "\n"
+    content = "\n".join(orjson.dumps(p).decode("utf-8") for p in papers) + "\n"
     atomic_write(pdir / "papers.jsonl", content)
 
 
@@ -163,10 +153,10 @@ def _parse_csv_to_papers(csv_text: str, project_id: str = "", csv_format: str = 
     csv_format: 'auto' | 'undermind' | 'zotero'
     """
     global_papers = _load_all_papers()
-    global_ids = {p.get("paper_id") or p.get("id") for p in global_papers}
+    global_ids = {p["paper_id"] for p in global_papers}
 
     proj_papers = _load_project_papers(project_id) if project_id else []
-    proj_ids = {p.get("paper_id") or p.get("id") for p in proj_papers}
+    proj_ids = {p["paper_id"] for p in proj_papers}
 
     imported = 0
     duplicates = 0
@@ -495,7 +485,7 @@ async def search_papers(query: str = "", project: str = "", pinned: bool = False
 async def get_paper(paper_id: str):
     papers = _load_all_papers()
     for p in papers:
-        if p.get("paper_id") == paper_id or p.get("id") == paper_id:
+        if p["paper_id"] == paper_id:
             ppdir = _papers_dir() / paper_id
             tag_data = read_yaml(ppdir / "tags.yaml") if ppdir.exists() else {}
             p["tags"] = tag_data.get("tags", p.get("tags", []))

@@ -1,8 +1,0 @@
-# Notes: REINFORCEMENT LEARNING: METHODS AND RECENT APPLICATIONS
-
-## Key Claims
-
-## Methods
-
-## Relevance
-

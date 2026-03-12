@@ -1,3 +1,0 @@
-# A New Advantage Actor-Critic Algorithm For Multi-Agent Environments
-
-Reinforcement learning is one of the most researched fields of artificial intelligence right now. Newer and newer algorithms are being developed, especially for deep reinforcement learning, where the selected action is computed with the assist of a neural network. One of the subcategories of reinforcement learning is multi-agent reinforcement learning, where multiple agents are present in the world. In our paper, we modify an already existing algorithm, the Advantage Actor-Critic (A2C) to be suitable for multi-agent scenarios. Afterwards, we test the modified algorithm on our testbed, a cooperative-competitive pursuit-evasion environment.

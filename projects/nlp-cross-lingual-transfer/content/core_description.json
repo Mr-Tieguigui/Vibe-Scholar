@@ -1,4 +1,0 @@
-{
-  "text": "We propose to study prompt injection attacks in skill-based LLM agents. Modern agent architectures increasingly organize functionality as reusable skills—high-level workflows that orchestrate multiple tools. This design introduces a new attack surface: an attacker can compromise the file of skill (i.e., skill.md) to manipulate the agent to select unintended skills or inject malicious instructions into skill workflows, leading to privilege escalation or sensitive data exfiltration. In this work, we systematically investigate prompt injection attacks targeting the skill layer. We further compare our attacks against several baselines, including both manual and automatic prompt injection methods. Our study reveals that skill-based architectures significantly expand the prompt injection attack surface and highlights the need for dedicated defenses at the skill layer.",
-  "updated_at": "2026-03-12T11:17:56.103596"
-}

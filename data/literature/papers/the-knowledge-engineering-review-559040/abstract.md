@@ -1,3 +1,0 @@
-# The Knowledge Engineering Review
-
-

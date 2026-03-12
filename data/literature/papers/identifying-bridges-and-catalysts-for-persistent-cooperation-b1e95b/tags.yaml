@@ -1,7 +1,0 @@
-tags:
-- D04 Retrieval & RAG
-- D06 Evaluation & Benchmarking
-- D08 Alignment & Safety
-projects:
-- nlp-cross-lingual-transfer
-pinned: false
