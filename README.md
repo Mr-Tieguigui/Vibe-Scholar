@@ -22,17 +22,16 @@
  
 ## What is VibeScholar?
 
- 
 **VibeScholar** is a human-in-the-loop research operations and productivity tool built for researchers who manage multiple projects at once. It structures the full research lifecycle into executable, traceable workflows:
- 
+
 ```
 Idea → Literature Review → Method & Evaluation Design → Vibe Coding → Vibe Research → Reports & Timeline
 ```
- 
+
 By default, VibeScholar runs in **0-API monitor mode**: you import templates and literature CSVs, log progress and artifacts, and the system keeps structured overviews, step trackers, timelines, and daily/weekly reports up to date. When you have API budget, you may optionally enable more automation for literature triage and related workflows — but the **core experience remains human-in-the-loop and cost-efficient**.
- 
+
 <p align="center">
-  <img src="docs/images/screenshot-dashboard.png" alt="VibeScholar Dashboard" width="90%"/>
+  <img src="docs/images/screenshot-dashboard.png" alt="VibeScholar Dashboard" width="100%"/>
   <br/>
   <sub><b>Fig 1.</b> VibeScholar Dashboard — multi-project overview with progress tracking, priority flags, and quick navigation.</sub>
 </p>
@@ -80,64 +79,66 @@ By default, VibeScholar runs in **0-API monitor mode**: you import templates and
 </table>
  
 ---
- 
 
- 
 ## Quickstart
- 
+
 ### Prerequisites
- 
-| Tool | Version | Check |
-|------|---------|-------|
-| Python | 3.12+ | `python3 --version` |
-| Node.js | 20+ | `node --version` |
-| npm | 10+ | `npm --version` |
- 
+
+| Tool    | Version | Check               |
+| ------- | ------- | ------------------- |
+| Python  | 3.12+   | `python3 --version` |
+| Node.js | 20+     | `node --version`    |
+| npm     | 10+     | `npm --version`     |
+
 ### 1. Clone & Install
- 
+
 ```bash
-git clone YOUR_GITHUB_LINK_HERE
+git clone https://github.com/Mr-Tieguigui/Vibe-Scholar.git
 cd VibeScholar
- 
+
+# Conda
+conda create -n vibescholar python=3.10
+conda activate vibesholar
+
 # Backend
 cd backend
 pip install -r requirements.txt
- 
+
 # Frontend
 cd ../frontend
 npm install
 ```
- 
+
 ### 2. Build & Run
- 
+
 ```bash
 # Build the frontend
 cd frontend
 npm run build
- 
+
 # Start the production server (serves both API + frontend)
 cd ..
 python3 -m uvicorn backend.app.main:app --host 127.0.0.1 --port 8007
 ```
- 
+
 Open **http://127.0.0.1:8007** in your browser.
- 
+
 ### 3. Development Mode (hot-reload)
- 
+
 ```bash
 # Terminal 1 — Backend
 cd backend
 uvicorn app.main:app --host 127.0.0.1 --port 8007 --reload
- 
+
 # Terminal 2 — Frontend
 cd frontend
 npm run dev
 ```
- 
+
 Frontend dev server runs on `http://localhost:5176` and proxies API requests to the backend.
- 
+
 <p align="center">
-  <img src="docs/images/screenshot-quickstart.png" alt="Quickstart Page" width="90%"/>
+  <img src="docs/images/screenshot-quickstart.png" alt="Quickstart Page" width="100%"/>
   <br/>
   <sub><b>Fig 2.</b> Built-in Quickstart guide — interactive onboarding walkthrough.</sub>
 </p>
@@ -220,7 +221,7 @@ VibeScholar ships with **62 synthetic demo projects** covering the breadth of mo
 > **Want a clean slate?** Use [VibeScholar-Zero](./VibeScholar-Zero/) — a minimal edition with just the Getting Started project and no demo data.
  
 <p align="center">
-  <img src="docs/images/screenshot-demo-projects.png" alt="Demo Projects Grid" width="90%"/>
+  <img src="docs/images/screenshot-demo-projects.png" alt="Demo Projects Grid" width="100%"/>
   <br/>
   <sub><b>Fig 43.</b> Demo projects grid — 62 projects across 16 research domains with search and domain filters.</sub>
 </p>
@@ -247,7 +248,7 @@ Full API docs available at `http://127.0.0.1:8007/docs` (Swagger UI) after start
 ## Template Workflow
  
 <p align="center">
-  <img src="docs/images/screenshot-template-workflow.png" alt="Template Workflow" width="90%"/>
+  <img src="docs/images/screenshot-template-workflow.png" alt="Template Workflow" width="100%"/>
   <br/>
   <sub><b>Fig 4.</b> Template workflow — fill with any LLM, upload JSON, auto-generate project structure.</sub>
 </p>
