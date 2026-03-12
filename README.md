@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/images/banner.svg" alt="VibeScholar Banner" width="100%"/>
+  <img src="docs/images/banner.png" alt="VibeScholar Banner" width="100%"/>
 </p>
  
 <p align="center">
@@ -274,7 +274,6 @@ VibeScholar auto-detects CSV formats from column headers:
 | **Zotero** | Title, Author, Abstract Note, DOI, Date Added |
  
 Simply export a CSV from your preferred tool and upload via the dashboard. The system normalizes, deduplicates, and links papers to your project.
-
 
 ---
 
