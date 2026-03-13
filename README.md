@@ -4,9 +4,9 @@
  
 <p align="center">
   <a href="#quickstart"><img src="https://img.shields.io/badge/-Quickstart-4f46e5?style=for-the-badge&logo=rocket&logoColor=white" alt="Quickstart"/></a>
+  <a href="#project-timeline"><img src="https://img.shields.io/badge/-Timeline-f59e0b?style=for-the-badge&logo=calendar&logoColor=white" alt="Timeline"/></a>
   <a href="#features"><img src="https://img.shields.io/badge/-Features-10b981?style=for-the-badge&logo=sparkles&logoColor=white" alt="Features"/></a>
-  <a href="YOUR_GITHUB_LINK_HERE"><img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
-  <a href="#contact"><img src="https://img.shields.io/badge/-Contact-6366f1?style=for-the-badge&logo=mail.ru&logoColor=white" alt="Contact"/></a>
+  <a href="https://github.com/Mr-Tieguigui/Vibe-Scholar"><img src="https://img.shields.io/badge/-GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
 </p>
  
 <p align="center">
@@ -37,7 +37,61 @@ By default, VibeScholar runs in **0-API monitor mode**: you import templates and
 </p>
  
 ---
- 
+
+## Project Timeline
+
+VibeScholar is under active development. The roadmap below highlights major milestones and near-term priorities.
+
+<table>
+<tr>
+<td width="25%"><b>Date</b></td>
+<td width="25%"><b>Status</b></td>
+<td width="50%"><b>Milestone</b></td>
+</tr>
+
+<tr>
+<td>2025-07</td>
+<td>✅ Open-sourced</td>
+<td>Initial public release of <b>VibeScholar</b> with dashboard, quickstart, templates, demo projects, literature import, execution tracking, and timeline views.</td>
+</tr>
+
+<tr>
+<td>2025-07</td>
+<td>✅ Landing page</td>
+<td>Published project homepage and GitHub repository, with screenshots, documentation, and onboarding materials.</td>
+</tr>
+
+<tr>
+<td>Now</td>
+<td>🚧 In progress</td>
+<td><b>Windows compatibility</b> — improve setup, path handling, and local deployment support for Windows users.</td>
+</tr>
+
+<tr>
+<td>Now</td>
+<td>🚧 In progress</td>
+<td><b>Chinese localization</b> — improve Chinese UI adaptation, bilingual documentation, and localized onboarding experience.</td>
+</tr>
+
+<tr>
+<td>Next</td>
+<td>🛠 Planned</td>
+<td><b>Usability polish</b> — improve interaction details, onboarding flow, and workflow clarity for first-time users.</td>
+</tr>
+
+<tr>
+<td>Next</td>
+<td>🛠 Planned</td>
+<td><b>Research workflow enhancements</b> — strengthen project templates, literature pipeline, and report generation experience.</td>
+</tr>
+</table>
+
+<p align="center">
+  <sub><b>Roadmap note.</b> VibeScholar is evolving as a human-in-the-loop research workspace for high-throughput researchers.</sub>
+</p>
+
+---
+
 ## Features
  
 <table>
@@ -342,8 +396,12 @@ This project is licensed under **CC BY-SA 4.0**. No telemetry, no cloud database
  
 ---
  
+## GitHub Stars
+
 <p align="center">
-  <img src="docs/images/icon.svg" alt="VibeScholar" width="32"/>
-  <br/>
+  <a href="https://star-history.com/#Mr-Tieguigui/Vibe-Scholar&Date">
+    <img src="https://api.star-history.com/svg?repos=Mr-Tieguigui/Vibe-Scholar&type=Date" alt="Star History Chart" width="100%"/>
+  </a>
+</p>
   <sub>Built with care for the research community.</sub>
 </p>
