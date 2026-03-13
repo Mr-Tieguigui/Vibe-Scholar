@@ -40,56 +40,8 @@ By default, VibeScholar runs in **0-API monitor mode**: you import templates and
 
 ## Project Timeline
 
-VibeScholar is under active development. The roadmap below highlights major milestones and near-term priorities.
-
-<table>
-<tr>
-<td width="25%"><b>Date</b></td>
-<td width="25%"><b>Status</b></td>
-<td width="50%"><b>Milestone</b></td>
-</tr>
-
-<tr>
-<td>2025-07</td>
-<td>✅ Open-sourced</td>
-<td>Initial public release of <b>VibeScholar</b> with dashboard, quickstart, templates, demo projects, literature import, execution tracking, and timeline views.</td>
-</tr>
-
-<tr>
-<td>2025-07</td>
-<td>✅ Landing page</td>
-<td>Published project homepage and GitHub repository, with screenshots, documentation, and onboarding materials.</td>
-</tr>
-
-<tr>
-<td>Now</td>
-<td>🚧 In progress</td>
-<td><b>Windows compatibility</b> — improve setup, path handling, and local deployment support for Windows users.</td>
-</tr>
-
-<tr>
-<td>Now</td>
-<td>🚧 In progress</td>
-<td><b>Chinese localization</b> — improve Chinese UI adaptation, bilingual documentation, and localized onboarding experience.</td>
-</tr>
-
-<tr>
-<td>Next</td>
-<td>🛠 Planned</td>
-<td><b>Usability polish</b> — improve interaction details, onboarding flow, and workflow clarity for first-time users.</td>
-</tr>
-
-<tr>
-<td>Next</td>
-<td>🛠 Planned</td>
-<td><b>Research workflow enhancements</b> — strengthen project templates, literature pipeline, and report generation experience.</td>
-</tr>
-</table>
-
-<p align="center">
-  <sub><b>Roadmap note.</b> VibeScholar is evolving as a human-in-the-loop research workspace for high-throughput researchers.</sub>
-</p>
-
+- **2026-03-13** · 🚀 **First public open-source release of VibeScholar** — including homepage, GitHub repository, dashboard overview, template workflow, literature import, execution tracking, timeline views, demo projects, and core documentation.
+- **In progress** · 🛠 **Windows compatibility and Chinese adaptation** — improving local setup support on Windows and refining the Chinese UI/documentation experience.
 ---
 
 ## Features
